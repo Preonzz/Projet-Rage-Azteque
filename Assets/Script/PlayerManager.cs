@@ -13,7 +13,9 @@ public class PlayerManager : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
 
-
+    // Attack
+    public GameObject attaqueFaible;
+    public GameObject attaqueForte;
 
 
     // Start is called before the first frame update
