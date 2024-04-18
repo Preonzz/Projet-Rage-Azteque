@@ -140,7 +140,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: cbfab933a47f2bf4985e986a7525ba8a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -165,11 +165,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 9100436455386613256}
   vitesse: 10
-  PositionPieds: {fileID: 6774591816825449881}
-  rayon: 0.3
-  sol:
-    serializedVersion: 2
-    m_Bits: 0
   TempsSaut: 1.5
 --- !u!114 &151864780043191572
 MonoBehaviour:
