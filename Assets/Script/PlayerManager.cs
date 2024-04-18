@@ -11,6 +11,8 @@ public class PlayerManager : MonoBehaviour
 
     public float fallSpeed;
     public float moveSpeed;
+    public float jumpForce;
+
 
 
 

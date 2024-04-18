@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CheckFloor : MonoBehaviour
@@ -17,18 +18,20 @@ public class CheckFloor : MonoBehaviour
         
     }
 
-    private void OnCollisionStay2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Floor")
+        if (other.gameObject.tag == "Floor" && GameManager.Instance.player.OnTheFloor == false)
         {
+            Debug.Log(GameManager.Instance.player.OnTheFloor);
             GameManager.Instance.player.OnTheFloor = true;
         }
     }
 
-    private void OnCollisionExit2D(Collision2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Floor")
+        if (other.gameObject.tag == "Floor" && GameManager.Instance.player.OnTheFloor == true)
         {
+            Debug.Log(GameManager.Instance.player.OnTheFloor);
             GameManager.Instance.player.OnTheFloor = false;
         }
     }

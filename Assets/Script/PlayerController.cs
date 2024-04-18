@@ -9,31 +9,60 @@ public class PlayerController : MonoBehaviour
     float inputHorizontal;
     Vector2 playerVelocity;
     public Rigidbody2D body;
+    public float vitesse = 10;
+    bool SurSol = false;
+    public Transform PositionPieds;
+    public float rayon;
+    public LayerMask sol;
+    bool EnSaut = false;
+    float TimerSaut;
+    public float TempsSaut = 1.5f;
 
     void Start()
     {
         player = GetComponent<PlayerManager>();
-        StartCoroutine(Jump());
     }
+
+
+
+
+    // Start is called before the first frame update
 
     // Update is called once per frame
     void Update()
     {
-        inputHorizontal = Input.GetAxis("Horizontal") ;
-        playerVelocity = new Vector2(inputHorizontal * player.moveSpeed, body.velocity.y * player.fallSpeed);
+        SurSol = Physics2D.OverlapCircle(PositionPieds.position, rayon, sol);
+        if (player.OnTheFloor == true && Input.GetButtonDown("Jump"))
+        {
+            body.velocity = Vector2.up * player.jumpForce * 2;
+            player.OnTheFloor = true;
+            TimerSaut = TempsSaut;
+        }
 
-        body.velocity = playerVelocity;
+        if (player.OnTheFloor == true && Input.GetButton("Jump"))
+        {
+            if (TimerSaut > 0)
+            {
+                body.velocity = Vector2.up * player.jumpForce * 2;
+                TimerSaut -= Time.deltaTime;
+            }
 
+            else
+            {
+                player.OnTheFloor = false;
+            }
+        }
+        if (Input.GetButtonUp("Jump"))
+        {
+            player.OnTheFloor = false;
+        }
     }
-
-    private IEnumerator Jump()
+    private void FixedUpdate()
     {
-        yield return new WaitUntil(() => player.OnTheFloor = true);
-        yield return new WaitUntil(() => Input.GetButtonDown("Jump"));
+        body.velocity = new Vector2(Input.GetAxis("Horizontal") * vitesse, body.velocity.y);
 
-        Debug.Log("Jump");
-        playerVelocity = new Vector2(inputHorizontal * player.moveSpeed, body.velocity.y);
 
-        StartCoroutine(Jump());
     }
+
 }
+

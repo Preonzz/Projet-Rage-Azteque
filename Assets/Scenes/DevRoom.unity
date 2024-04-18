@@ -225,7 +225,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 151864780043191572, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: fallSpeed
-      value: 1.025
+      value: -1.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 151864780043191572, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+      propertyPath: jumpForce
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 151864780043191572, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: moveSpeed
@@ -290,6 +294,26 @@ PrefabInstance:
     - target: {fileID: 4483547667614277514, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6796773608651640428, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+      propertyPath: m_Size.x
+      value: 1.433562
+      objectReference: {fileID: 0}
+    - target: {fileID: 6796773608651640428, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+      propertyPath: m_Size.y
+      value: 0.6745707
+      objectReference: {fileID: 0}
+    - target: {fileID: 6796773608651640428, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.02905333
+      objectReference: {fileID: 0}
+    - target: {fileID: 6796773608651640428, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.16271466
+      objectReference: {fileID: 0}
+    - target: {fileID: 6796773608651640428, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

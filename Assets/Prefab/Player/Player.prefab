@@ -164,6 +164,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 9100436455386613256}
+  vitesse: 10
+  PositionPieds: {fileID: 6774591816825449881}
+  rayon: 0.3
+  sol:
+    serializedVersion: 2
+    m_Bits: 0
+  TempsSaut: 1.5
 --- !u!114 &151864780043191572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +186,7 @@ MonoBehaviour:
   OnTheFloor: 1
   fallSpeed: 1
   moveSpeed: 10
+  jumpForce: 0.005
 --- !u!1 &5477338833633260086
 GameObject:
   m_ObjectHideFlags: 0
