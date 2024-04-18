@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         player = GetComponent<PlayerManager>();
+        StartCoroutine(lightAttack());
     }
     // Update is called once per frame
     void Update()
@@ -55,5 +56,15 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    IEnumerator lightAttack()
+    {
+        yield return new WaitUntil(() => Input.GetButtonDown("Fire1"));
+        Vector2 SpawnPosition = new Vector2(transform.position.x, transform.position.y);
+        GameObject smallAttack = Instantiate(player.attaqueFaible, SpawnPosition, Quaternion.identity);
+        yield return new WaitForSecondsRealtime(0.5f);
+        Destroy(smallAttack);
+        yield return null;
+        StartCoroutine(lightAttack());
+    }
 }
 
