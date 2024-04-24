@@ -5,11 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
+  - Ennemi
+  - Light Attack
+  - Heavy Attack
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player Attacks
   - Water
   - UI
   - 
