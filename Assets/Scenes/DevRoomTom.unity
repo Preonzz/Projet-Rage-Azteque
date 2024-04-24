@@ -454,6 +454,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7142156631627324570, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+      propertyPath: speedX
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -469,7 +473,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 868762539282107410, guid: d95dc0a6b430d7a4d9401f4a1ccaefce, type: 3}
       propertyPath: m_Constraints
-      value: 7
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 868762539282107410, guid: d95dc0a6b430d7a4d9401f4a1ccaefce, type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 868762539282107410, guid: d95dc0a6b430d7a4d9401f4a1ccaefce, type: 3}
       propertyPath: m_GravityScale
