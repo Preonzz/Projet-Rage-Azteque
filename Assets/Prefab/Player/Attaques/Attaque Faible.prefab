@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5941111091641993263}
   - component: {fileID: 1276339397379660313}
   - component: {fileID: 5475440596679705935}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Attaque Faible
-  m_TagString: Untagged
+  m_TagString: Light Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
