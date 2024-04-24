@@ -36,7 +36,7 @@ Transform:
   m_Children:
   - {fileID: 6774591816825449881}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1802743384104618119
 SpriteRenderer:
@@ -165,8 +165,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 9100436455386613256}
-  vitesse: 10
-  MemoireVitesse: 10
+  speedX: 15
+  rememberSpeedX: 0
+  rememberSpeedY: 0
+  speedY: 0
   TempsSaut: 0.2
   lastAxis: 0.10481283
   SpawnPosition: {x: 0, y: 0}

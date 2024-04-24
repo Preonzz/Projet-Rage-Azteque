@@ -8,8 +8,9 @@ public class PlayerController : MonoBehaviour
     PlayerManager player; 
 
     public Rigidbody2D body;
-    public float vitesse = 10;
-    public float MemoireVitesse;
+    public float speedX;
+    float rememberSpeedX;
+    public float speedY;
     float TimerSaut;
     public float TempsSaut = 0.1f;
     bool jumping = false;
@@ -18,10 +19,11 @@ public class PlayerController : MonoBehaviour
     GameObject smallAttack;
     GameObject bigAttack;
     bool inAttack = false;
+    bool stopAttack = false;
 
     void Start()
     {
-        MemoireVitesse = vitesse;
+        rememberSpeedX = speedX;
         player = GetComponent<PlayerManager>();
         StartCoroutine(lightAttack());
         StartCoroutine(rememberAxis());
@@ -31,7 +33,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.OnTheFloor == true && Input.GetButtonDown("Jump"))
+        if (player.OnTheFloor == true && Input.GetButtonDown("Jump") && stopAttack == false)
         {
             body.velocity = Vector2.up * player.jumpForce;
             jumping = true;
@@ -42,7 +44,7 @@ public class PlayerController : MonoBehaviour
             TimerSaut -= Time.deltaTime;
         }
 
-        if (jumping == true && Input.GetButton("Jump"))
+        if (jumping == true && Input.GetButton("Jump") && stopAttack == false)
         {
             if (TimerSaut > 0)
             {
@@ -57,11 +59,19 @@ public class PlayerController : MonoBehaviour
         if (jumping == false || TimerSaut <= 0)
         {
             body.AddForce(Vector2.up * player.fallSpeed);
+
+
         }
     }
     private void FixedUpdate()
     {
-        body.velocity = new Vector2(Input.GetAxis("Horizontal") * vitesse, body.velocity.y);
+        body.velocity = new Vector2(Input.GetAxis("Horizontal") * speedX, body.velocity.y);
+
+        if (inAttack == false)
+        {
+            speedOnAir();
+        }
+        move();
     }
 
     IEnumerator lightAttack()
@@ -79,10 +89,13 @@ public class PlayerController : MonoBehaviour
             smallAttack = Instantiate(player.attaqueFaible, SpawnPosition, Quaternion.identity);
         }
         inAttack = true;
-        vitesse = 1;
+        stopAttack = true;
+        speedX = 1;
         yield return new WaitForSecondsRealtime(0.2f);
         Destroy(smallAttack);
-        vitesse = MemoireVitesse;
+        speedOnAir();
+        stopAttack = false;
+
         yield return new WaitForSecondsRealtime(0.5f);
         
         inAttack = false;
@@ -105,10 +118,12 @@ public class PlayerController : MonoBehaviour
             bigAttack = Instantiate(player.attaqueForte, SpawnPosition, Quaternion.identity);
         }
         inAttack = true;
-        vitesse = 1;
+        stopAttack = true;
+        speedX = 1;
         yield return new WaitForSecondsRealtime(0.2f);
         Destroy(bigAttack);
-        vitesse = MemoireVitesse;
+        speedOnAir();
+        stopAttack = false;
         yield return new WaitForSecondsRealtime(1.5f);
 
         inAttack = false;
@@ -127,6 +142,30 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    void speedOnAir()
+    {
+        if (player.OnTheFloor == true)
+        {
+            speedX = rememberSpeedX;
+        }
 
+        if (player.OnTheFloor == false)
+        {
+            speedX = rememberSpeedX / 1.8f;
+        }
+    }
+
+    void move()
+    {
+        if (stopAttack == false)
+        {
+        body.velocity = new Vector2(Input.GetAxis("Horizontal") * speedX, body.velocity.y);
+        }
+
+        if (stopAttack == true)
+        {
+            body.velocity = new Vector2(Input.GetAxis("Horizontal") * speedX, 0);
+        }
+    } 
 }
 
