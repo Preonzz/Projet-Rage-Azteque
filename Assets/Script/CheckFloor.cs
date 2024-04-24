@@ -24,6 +24,7 @@ public class CheckFloor : MonoBehaviour
         {
             Debug.Log(GameManager.Instance.player.OnTheFloor);
             GameManager.Instance.player.OnTheFloor = true;
+
         }
     }
 

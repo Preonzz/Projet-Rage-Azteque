@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(lightAttack());
         StartCoroutine(rememberAxis());
         StartCoroutine(HeavyAttack());
+
     }
     // Update is called once per frame
     void Update()
@@ -124,6 +125,8 @@ public class PlayerController : MonoBehaviour
         }
         StartCoroutine(rememberAxis());
     }
+
+
 
 }
 
