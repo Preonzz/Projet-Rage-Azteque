@@ -7,6 +7,14 @@ public class PlayerManager : MonoBehaviour
     GameManager game;
     public bool OnTheFloor = false;
 
+    // Player Resources
+
+    public int Health;
+    public int MaxHealth;
+    public int currentRage;
+    public int maxRage;
+    public int RageSections;
+
     // Player 
 
     public float fallSpeed;
@@ -17,18 +25,21 @@ public class PlayerManager : MonoBehaviour
     public GameObject attaqueFaible;
     public GameObject attaqueForte;
 
+    // Powers
+    public bool unlockSun = false;
+    public bool unlockRage = false;
+    public bool unlockHeal = false;
+
+    public int sunDmg;
+    public bool enraged = false;
+    public int healQuantity;
+    public float rageDuration;
+
+    public GameObject sunBeam;
 
     // Start is called before the first frame update
     void Start()
     {
         game = GameManager.Instance;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
 }

@@ -8,6 +8,7 @@ TagManager:
   - Ennemi
   - Light Attack
   - Heavy Attack
+  - Sun Beam
   layers:
   - Default
   - TransparentFX

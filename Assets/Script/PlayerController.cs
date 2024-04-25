@@ -16,15 +16,13 @@ public class PlayerController : MonoBehaviour
     bool jumping = false;
     public float lastAxis = 1;
     public Vector2 SpawnPosition;
+
     GameObject smallAttack;
     GameObject bigAttack;
-    GameObject sun;
-    GameObject rage;
-    GameObject heal;
     bool inAttack = false;
     bool stopAttack = false;
 
-
+    GameObject SunRay;
 
     void Start()
     {
@@ -33,6 +31,9 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(lightAttack());
         StartCoroutine(rememberAxis());
         StartCoroutine(HeavyAttack());
+        StartCoroutine(Sun());
+        StartCoroutine(Rage());
+        StartCoroutine(Heal());
 
     }
     // Update is called once per frame
@@ -68,6 +69,7 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+
     private void FixedUpdate()
     {
         body.velocity = new Vector2(Input.GetAxis("Horizontal") * speedX, body.velocity.y);
@@ -78,6 +80,45 @@ public class PlayerController : MonoBehaviour
         }
         move();
     }
+
+    // Deplacements 
+    IEnumerator rememberAxis()
+    {
+        yield return new WaitUntil(() => Input.GetAxis("Horizontal") < -0.1 || Input.GetAxis("Horizontal") > 0.1);
+        if (Input.GetAxis("Horizontal") < -0.1 || Input.GetAxis("Horizontal") > 0.1)
+        {
+            lastAxis = Input.GetAxis("Horizontal");
+        }
+        StartCoroutine(rememberAxis());
+    }
+
+
+    void speedOnAir()
+    {
+        if (player.OnTheFloor == true)
+        {
+            speedX = rememberSpeedX;
+        }
+
+        if (player.OnTheFloor == false)
+        {
+            speedX = rememberSpeedX / 1.8f;
+        }
+    }
+
+    void move()
+    {
+        if (stopAttack == false)
+        {
+            body.velocity = new Vector2(Input.GetAxis("Horizontal") * speedX, body.velocity.y);
+        }
+
+        if (stopAttack == true)
+        {
+            body.velocity = new Vector2(Input.GetAxis("Horizontal") * speedX, 0);
+        }
+    }
+    // Attaque 
 
     IEnumerator lightAttack()
     {
@@ -136,43 +177,77 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(HeavyAttack());
     }
 
-    IEnumerator rememberAxis()
+    void Powers()
     {
-        yield return new WaitUntil(() => Input.GetAxis("Horizontal") < -0.1 || Input.GetAxis("Horizontal") > 0.1);
-        if(Input.GetAxis("Horizontal") < -0.1 || Input.GetAxis("Horizontal") > 0.1)
+        if (player.unlockSun == true)
         {
-            lastAxis = Input.GetAxis("Horizontal");
+
         }
-        StartCoroutine(rememberAxis());
-    }
-
-
-    void speedOnAir()
-    {
-        if (player.OnTheFloor == true)
+        
+        if (player.unlockRage == true)
         {
-            speedX = rememberSpeedX;
+
         }
 
-        if (player.OnTheFloor == false)
+        if (player.unlockHeal == true)
         {
-            speedX = rememberSpeedX / 1.8f;
+
         }
     }
-
-    void move()
+    // Powers 
+    IEnumerator Sun()
     {
-        if (stopAttack == false)
+        yield return new WaitUntil(() => Input.GetButtonDown("Fire3") && inAttack == false && player.unlockSun == true);
+
+        player.currentRage -= 60;
+        if (lastAxis >= 0.1f)
         {
-        body.velocity = new Vector2(Input.GetAxis("Horizontal") * speedX, body.velocity.y);
+            SpawnPosition = new Vector2(transform.position.x + 0.8f, transform.position.y);
+            SunRay = Instantiate(player.sunBeam, SpawnPosition, Quaternion.identity);
         }
 
-        if (stopAttack == true)
+        if (lastAxis <= -0.1f)
         {
-            body.velocity = new Vector2(Input.GetAxis("Horizontal") * speedX, 0);
+            SpawnPosition = new Vector2(transform.position.x - 0.8f, transform.position.y);
+            SunRay = Instantiate(player.sunBeam, SpawnPosition, Quaternion.identity);
         }
-    } 
+        inAttack = true;
+        stopAttack = true;
+        speedX = 1;
+        yield return new WaitForSecondsRealtime(0.2f);
+        Destroy(SunRay);
+        speedOnAir();
+        stopAttack = false;
+        yield return new WaitForSecondsRealtime(1.5f);
+
+        inAttack = false;
+        yield return null;
+
+        StartCoroutine(Sun());
+    }
+
+    IEnumerator Rage()
+    {
+        yield return new WaitUntil(() => Input.GetButtonDown("Fire3") && inAttack == false && player.unlockRage == true);
+        player.currentRage -= 40;
+        player.enraged = true;
+
+        yield return new WaitForSecondsRealtime(player.rageDuration);
+
+        player.enraged = false;
+
+        yield return null;
+
+        StartCoroutine(Rage());
+    }
+
+    IEnumerator Heal()
+    {
+        yield return new WaitUntil(() => Input.GetButtonDown("Fire3") && inAttack == false && player.unlockHeal == true);
+        player.currentRage -= 20;
+        player.Health += player.healQuantity;
+        yield return null;
+
+        StartCoroutine(Heal());
+    }
 }
-
-public enum Powers { sun, rage, heal }
-
