@@ -18,8 +18,13 @@ public class PlayerController : MonoBehaviour
     public Vector2 SpawnPosition;
     GameObject smallAttack;
     GameObject bigAttack;
+    GameObject sun;
+    GameObject rage;
+    GameObject heal;
     bool inAttack = false;
     bool stopAttack = false;
+
+
 
     void Start()
     {
@@ -168,4 +173,6 @@ public class PlayerController : MonoBehaviour
         }
     } 
 }
+
+public enum Powers { sun, rage, heal }
 
