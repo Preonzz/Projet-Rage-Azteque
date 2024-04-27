@@ -412,7 +412,7 @@ PrefabInstance:
       objectReference: {fileID: 7479130976754537662, guid: 223835df44d2f054eaaa8caa75c6d37a, type: 3}
     - target: {fileID: 151864780043191572, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: unlockSun
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 151864780043191572, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: unlockHeal
@@ -488,8 +488,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 868762539282107410, guid: d95dc0a6b430d7a4d9401f4a1ccaefce, type: 3}
+      propertyPath: m_Mass
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 868762539282107410, guid: d95dc0a6b430d7a4d9401f4a1ccaefce, type: 3}
       propertyPath: m_Constraints
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 868762539282107410, guid: d95dc0a6b430d7a4d9401f4a1ccaefce, type: 3}
       propertyPath: m_UseAutoMass

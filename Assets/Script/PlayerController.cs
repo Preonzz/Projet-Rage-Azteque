@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     float TimerSaut;
     public float TempsSaut = 0.1f;
     bool jumping = false;
-    public float lastAxis = 1;
+
     public Vector2 SpawnPosition;
 
     GameObject smallAttack;
@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitUntil(() => Input.GetAxis("Horizontal") < -0.1 || Input.GetAxis("Horizontal") > 0.1);
         if (Input.GetAxis("Horizontal") < -0.1 || Input.GetAxis("Horizontal") > 0.1)
         {
-            lastAxis = Input.GetAxis("Horizontal");
+            player.lastAxis = Input.GetAxis("Horizontal");
         }
         StartCoroutine(rememberAxis());
     }
@@ -115,7 +115,7 @@ public class PlayerController : MonoBehaviour
 
         if (stopAttack == true)
         {
-            body.velocity = new Vector2(Input.GetAxis("Horizontal") * speedX, 0);
+            body.velocity = new Vector2(Input.GetAxis("Horizontal") * speedX, 0.5f);
         }
     }
     // Attaque 
@@ -123,13 +123,13 @@ public class PlayerController : MonoBehaviour
     IEnumerator lightAttack()
     {
         yield return new WaitUntil(() => Input.GetButtonDown("Fire1") && inAttack == false);
-        if (lastAxis >= 0.1f)
+        if (player.lastAxis >= 0.1f)
         {
             SpawnPosition = new Vector2(transform.position.x+0.8f, transform.position.y);
             smallAttack = Instantiate(player.attaqueFaible, SpawnPosition, Quaternion.identity);
         }
 
-        if (lastAxis <= -0.1f)
+        if (player.lastAxis <= -0.1f)
         {
             SpawnPosition = new Vector2(transform.position.x-0.8f, transform.position.y);
             smallAttack = Instantiate(player.attaqueFaible, SpawnPosition, Quaternion.identity);
@@ -152,13 +152,13 @@ public class PlayerController : MonoBehaviour
     IEnumerator HeavyAttack()
     {
         yield return new WaitUntil(() => Input.GetButtonDown("Fire2") && inAttack == false);
-        if (lastAxis >= 0.1f)
+        if (player.lastAxis >= 0.1f)
         {
             SpawnPosition = new Vector2(transform.position.x + 0.8f, transform.position.y);
             bigAttack = Instantiate(player.attaqueForte, SpawnPosition, Quaternion.identity);
         }
 
-        if (lastAxis <= -0.1f)
+        if (player.lastAxis <= -0.1f)
         {
             SpawnPosition = new Vector2(transform.position.x - 0.8f, transform.position.y);
             bigAttack = Instantiate(player.attaqueForte, SpawnPosition, Quaternion.identity);
@@ -200,21 +200,21 @@ public class PlayerController : MonoBehaviour
         yield return new WaitUntil(() => Input.GetButtonDown("Fire3") && inAttack == false && player.unlockSun == true);
 
         player.currentRage -= 60;
-        if (lastAxis >= 0.1f)
+        if (player.lastAxis >= 0.1f)
         {
-            SpawnPosition = new Vector2(transform.position.x + 0.8f, transform.position.y);
+            SpawnPosition = new Vector2(transform.position.x + 10f, transform.position.y);
             SunRay = Instantiate(player.sunBeam, SpawnPosition, Quaternion.identity);
         }
 
-        if (lastAxis <= -0.1f)
+        if (player.lastAxis <= -0.1f)
         {
-            SpawnPosition = new Vector2(transform.position.x - 0.8f, transform.position.y);
+            SpawnPosition = new Vector2(transform.position.x - 10f, transform.position.y);
             SunRay = Instantiate(player.sunBeam, SpawnPosition, Quaternion.identity);
         }
         inAttack = true;
         stopAttack = true;
-        speedX = 1;
-        yield return new WaitForSecondsRealtime(0.2f);
+        speedX = 0;
+        yield return new WaitForSecondsRealtime(1.5f);
         Destroy(SunRay);
         speedOnAir();
         stopAttack = false;

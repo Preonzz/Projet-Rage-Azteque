@@ -24,6 +24,7 @@ public class PlayerManager : MonoBehaviour
     // Attack
     public GameObject attaqueFaible;
     public GameObject attaqueForte;
+    public float lastAxis = 1;
 
     // Powers
     public bool unlockSun = false;
