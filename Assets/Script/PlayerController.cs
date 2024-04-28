@@ -142,7 +142,7 @@ public class PlayerController : MonoBehaviour
         speedOnAir();
         stopAttack = false;
 
-        yield return new WaitForSecondsRealtime(0.5f);
+        yield return new WaitForSecondsRealtime(0.5f / player.attackSpeed);
         
         inAttack = false;
         yield return null;
@@ -170,7 +170,7 @@ public class PlayerController : MonoBehaviour
         Destroy(bigAttack);
         speedOnAir();
         stopAttack = false;
-        yield return new WaitForSecondsRealtime(1.5f);
+        yield return new WaitForSecondsRealtime(1.5f / player.attackSpeed);
 
         inAttack = false;
         yield return null;
@@ -218,7 +218,7 @@ public class PlayerController : MonoBehaviour
         Destroy(SunRay);
         speedOnAir();
         stopAttack = false;
-        yield return new WaitForSecondsRealtime(1.5f);
+        yield return new WaitForSecondsRealtime(1.5f / player.attackSpeed);
 
         inAttack = false;
         yield return null;
@@ -228,14 +228,14 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Rage()
     {
-        yield return new WaitUntil(() => Input.GetButtonDown("Fire3") && inAttack == false && player.unlockRage == true);
+        yield return new WaitUntil(() => Input.GetButtonDown("Fire4") && inAttack == false && player.unlockRage == true);
         player.currentRage -= 40;
         player.enraged = true;
-
+        player.attackSpeed = 5;
+        Debug.Log("Rage");
         yield return new WaitForSecondsRealtime(player.rageDuration);
-
         player.enraged = false;
-
+        player.attackSpeed = 1;
         yield return null;
 
         StartCoroutine(Rage());

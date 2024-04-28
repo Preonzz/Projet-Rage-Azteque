@@ -420,7 +420,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 151864780043191572, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: unlockRage
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 151864780043191572, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+      propertyPath: rageDuration
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3809495722565081956, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: m_RootOrder
