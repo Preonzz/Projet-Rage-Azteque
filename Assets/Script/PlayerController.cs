@@ -228,7 +228,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Rage()
     {
-        yield return new WaitUntil(() => Input.GetButtonDown("Fire4") && inAttack == false && player.unlockRage == true);
+        yield return new WaitUntil(() => Input.GetButtonDown("Fire4") && player.enraged == false && player.unlockRage == true);
         player.currentRage -= 40;
         player.enraged = true;
         player.attackSpeed = 5;
@@ -243,9 +243,14 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Heal()
     {
-        yield return new WaitUntil(() => Input.GetButtonDown("Fire3") && inAttack == false && player.unlockHeal == true);
+        yield return new WaitUntil(() => Input.GetButtonDown("Fire5") && inAttack == false && player.unlockHeal == true);
         player.currentRage -= 20;
         player.Health += player.healQuantity;
+        if (player.Health > player.MaxHealth)
+        {
+            player.Health = player.MaxHealth;
+        }
+        Debug.Log("Heal");
         yield return null;
 
         StartCoroutine(Heal());
