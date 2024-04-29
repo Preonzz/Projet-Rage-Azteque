@@ -168,7 +168,6 @@ MonoBehaviour:
   speedX: 15
   speedY: 0
   TempsSaut: 0.2
-  lastAxis: 0.10481283
   SpawnPosition: {x: 0, y: 0}
 --- !u!114 &151864780043191572
 MonoBehaviour:
@@ -183,8 +182,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnTheFloor: 0
-  Health: 0
-  MaxHealth: 0
+  Health: 100
+  MaxHealth: 100
   currentRage: 0
   maxRage: 0
   RageSections: 0
@@ -193,13 +192,15 @@ MonoBehaviour:
   jumpForce: 5
   attaqueFaible: {fileID: 5478998340817212012, guid: eac20cf9ec315904dbdfcd71cf7a9143, type: 3}
   attaqueForte: {fileID: 6503379717981031647, guid: 127b4ae36b5fd5a4c9e5693b98639365, type: 3}
-  unlockSun: 1
+  lastAxis: 1
+  attackSpeed: 1
+  unlockSun: 0
   unlockRage: 0
   unlockHeal: 0
-  sunDmg: 0
+  sunDmg: 4
   enraged: 0
-  healQuantity: 0
-  rageDuration: 0
+  healQuantity: 20
+  rageDuration: 10
   sunBeam: {fileID: 7479130976754537662, guid: 223835df44d2f054eaaa8caa75c6d37a, type: 3}
 --- !u!61 &4404316776100348388
 BoxCollider2D:

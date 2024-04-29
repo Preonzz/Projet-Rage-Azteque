@@ -77,7 +77,7 @@ public class DummyController : MonoBehaviour
     IEnumerator SunPulse()
     {
         yield return new WaitUntil(() => enemyInSun == true);
-        HP -= 4;
+        HP -= GameManager.Instance.player.sunDmg;
         Debug.Log(HP);
         if (GameManager.Instance.player.lastAxis >= 0.1f)
         {

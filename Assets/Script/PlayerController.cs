@@ -177,23 +177,6 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(HeavyAttack());
     }
 
-    void Powers()
-    {
-        if (player.unlockSun == true)
-        {
-
-        }
-        
-        if (player.unlockRage == true)
-        {
-
-        }
-
-        if (player.unlockHeal == true)
-        {
-
-        }
-    }
     // Powers 
     IEnumerator Sun()
     {
