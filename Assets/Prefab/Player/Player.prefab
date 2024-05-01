@@ -185,7 +185,7 @@ MonoBehaviour:
   Health: 100
   MaxHealth: 100
   currentRage: 0
-  maxRage: 0
+  maxRage: 100
   RageSections: 0
   fallSpeed: -2
   moveSpeed: 15
