@@ -20,6 +20,7 @@ public class PlayerManager : MonoBehaviour
     public float fallSpeed;
     public float moveSpeed;
     public float jumpForce;
+    float XPlayerPosition;
 
     // Attack
     public GameObject attaqueFaible;
@@ -43,5 +44,13 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         game = GameManager.Instance;
+        StartCoroutine(PositionX());
+    }
+
+    IEnumerator PositionX()
+    {
+        XPlayerPosition = transform.position.x;
+        yield return null;
+        StartCoroutine(PositionX());
     }
 }

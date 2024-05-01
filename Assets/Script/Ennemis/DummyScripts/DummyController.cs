@@ -7,6 +7,11 @@ public class DummyController : MonoBehaviour
 {
     public int HP;
     public Rigidbody2D enemyBody;
+    public GameObject player;
+    float XEnemyPosition;
+    public float enemyAttackRange;
+    public float enemySpeed;
+    
     
     
     //enemy dans le soleil
@@ -16,13 +21,26 @@ public class DummyController : MonoBehaviour
     {
         StartCoroutine(SunPulse());
     }
-    void Update()
+    void FixedUpdate()
     {
         if (HP <= 0)
         {
             Destroy(gameObject);
         }
-        
+        XEnemyPosition = transform.position.x;
+
+        if (XEnemyPosition < player.transform.position.x && player.transform.position.x - XEnemyPosition > enemyAttackRange) 
+        {
+            Debug.Log("Droite");
+            enemyBody.velocity = new Vector2(enemySpeed, enemyBody.velocity.y);
+        }
+
+        if (XEnemyPosition > player.transform.position.x && XEnemyPosition - player.transform.position.x > enemyAttackRange)
+        {
+            Debug.Log("Gauche");
+            enemyBody.velocity = new Vector2(-enemySpeed, enemyBody.velocity.y);
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
