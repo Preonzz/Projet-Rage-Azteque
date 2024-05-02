@@ -11,15 +11,17 @@ public class DummyController : MonoBehaviour
     float XEnemyPosition;
     public float enemyAttackRange;
     public float enemySpeed;
-    
-    
-    
+    public Vector2 SpawnPosition;
+    GameObject Attack;
+    public GameObject enemyAttack;
+
     //enemy dans le soleil
     bool enemyInSun = false;
     
     void Start()
     {
         StartCoroutine(SunPulse());
+        StartCoroutine(EnemyAttack());
     }
     void FixedUpdate()
     {
@@ -121,6 +123,27 @@ public class DummyController : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.1f);
         StartCoroutine(SunPulse());
     }
+    IEnumerator EnemyAttack()
+    {
+        yield return new WaitUntil(() => player.transform.position.x - XEnemyPosition < enemyAttackRange && player.transform.position.x - XEnemyPosition > -enemyAttackRange);
+        Debug.Log("attack ennemie");
+        if (player.transform.position.x - XEnemyPosition > 0)
+        {
+            SpawnPosition = new Vector2(transform.position.x + 0.8f, transform.position.y);
+            Attack = Instantiate(enemyAttack, SpawnPosition, Quaternion.identity);
+        }
 
+        if (player.transform.position.x - XEnemyPosition < 0)
+        {
+            SpawnPosition = new Vector2(transform.position.x - 0.8f, transform.position.y);
+            Attack = Instantiate(enemyAttack, SpawnPosition, Quaternion.identity);
+        }
+        yield return new WaitForSecondsRealtime(0.2f);
+        Destroy(Attack);
+
+        yield return new WaitForSecondsRealtime(1f);
+
+        StartCoroutine(EnemyAttack());
+    }
 }
 
