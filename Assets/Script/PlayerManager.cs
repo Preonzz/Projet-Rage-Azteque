@@ -21,6 +21,7 @@ public class PlayerManager : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
     float XPlayerPosition;
+    public bool mort = false;
 
     // Attack
     public GameObject attaqueFaible;
@@ -52,5 +53,18 @@ public class PlayerManager : MonoBehaviour
         XPlayerPosition = transform.position.x;
         yield return null;
         StartCoroutine(PositionX());
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == ("EnemySmash"))
+        {
+            Health -= 10;
+        }
+
+        if (Health <= 0)
+        {
+            mort = true;
+        }
     }
 }

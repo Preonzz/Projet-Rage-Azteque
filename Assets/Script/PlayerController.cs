@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.OnTheFloor == true && Input.GetButtonDown("Jump") && stopAttack == false)
+        if (player.OnTheFloor == true && Input.GetButtonDown("Jump") && stopAttack == false && player.mort == false)
         {
             body.velocity = Vector2.up * player.jumpForce;
             jumping = true;
@@ -72,13 +72,18 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        body.velocity = new Vector2(Input.GetAxis("Horizontal") * speedX, body.velocity.y);
+        if (player.mort == false)
+        {
+            body.velocity = new Vector2(Input.GetAxis("Horizontal") * speedX, body.velocity.y);
+            move();
+        }
+        
 
         if (inAttack == false)
         {
             speedOnAir();
         }
-        move();
+
     }
 
     // Deplacements 
@@ -122,7 +127,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator lightAttack()
     {
-        yield return new WaitUntil(() => Input.GetButtonDown("Fire1") && inAttack == false);
+        yield return new WaitUntil(() => Input.GetButtonDown("Fire1") && inAttack == false && player.mort == false);
         if (player.lastAxis >= 0.1f)
         {
             SpawnPosition = new Vector2(transform.position.x+0.8f, transform.position.y);
@@ -151,7 +156,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator HeavyAttack()
     {
-        yield return new WaitUntil(() => Input.GetButtonDown("Fire2") && inAttack == false);
+        yield return new WaitUntil(() => Input.GetButtonDown("Fire2") && inAttack == false && player.mort == false);
         if (player.lastAxis >= 0.1f)
         {
             SpawnPosition = new Vector2(transform.position.x + 0.8f, transform.position.y);
@@ -180,7 +185,7 @@ public class PlayerController : MonoBehaviour
     // Powers 
     IEnumerator Sun()
     {
-        yield return new WaitUntil(() => Input.GetButtonDown("Fire3") && inAttack == false && player.unlockSun == true && player.currentRage >= 60);
+        yield return new WaitUntil(() => Input.GetButtonDown("Fire3") && inAttack == false && player.unlockSun == true && player.currentRage >= 60 && player.mort == false);
 
         player.currentRage -= 60;
         if (player.lastAxis >= 0.1f)
@@ -211,7 +216,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Rage()
     {
-        yield return new WaitUntil(() => Input.GetButtonDown("Fire4") && player.enraged == false && player.unlockRage == true && player.currentRage >= 40);
+        yield return new WaitUntil(() => Input.GetButtonDown("Fire4") && player.enraged == false && player.unlockRage == true && player.currentRage >= 40 && player.mort == false);
         player.currentRage -= 40;
         player.enraged = true;
         player.attackSpeed = 5;
@@ -226,7 +231,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Heal()
     {
-        yield return new WaitUntil(() => Input.GetButtonDown("Fire5") && inAttack == false && player.unlockHeal == true && player.currentRage >= 20);
+        yield return new WaitUntil(() => Input.GetButtonDown("Fire5") && inAttack == false && player.unlockHeal == true && player.currentRage >= 20 && player.mort == false);
         player.currentRage -= 20;
         player.Health += player.healQuantity;
         if (player.Health > player.MaxHealth)
