@@ -14,12 +14,14 @@ public class PlayerController : MonoBehaviour
     float TimerSaut;
     public float TempsSaut = 0.1f;
     bool jumping = false;
+    float interAttack = 1f;
 
     public Vector2 SpawnPosition;
 
     GameObject smallAttack;
     GameObject bigAttack;
     bool inAttack = false;
+    bool inAttack2 = false;
     bool stopAttack = false;
 
     GameObject SunRay;
@@ -139,6 +141,7 @@ public class PlayerController : MonoBehaviour
             SpawnPosition = new Vector2(transform.position.x-0.8f, transform.position.y);
             smallAttack = Instantiate(player.attaqueFaible, SpawnPosition, Quaternion.identity);
         }
+
         inAttack = true;
         stopAttack = true;
         speedX = 1;
@@ -147,7 +150,11 @@ public class PlayerController : MonoBehaviour
         speedOnAir();
         stopAttack = false;
 
-        yield return new WaitForSecondsRealtime(0.5f / player.attackSpeed);
+
+
+
+        yield return new WaitForSecondsRealtime(0.2f / player.attackSpeed);
+
         
         inAttack = false;
         yield return null;
@@ -156,7 +163,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator HeavyAttack()
     {
-        yield return new WaitUntil(() => Input.GetButtonDown("Fire2") && inAttack == false && player.mort == false);
+        yield return new WaitUntil(() => Input.GetButtonDown("Fire2") && inAttack2 == false && player.mort == false);
         if (player.lastAxis >= 0.1f)
         {
             SpawnPosition = new Vector2(transform.position.x + 0.8f, transform.position.y);
@@ -168,16 +175,16 @@ public class PlayerController : MonoBehaviour
             SpawnPosition = new Vector2(transform.position.x - 0.8f, transform.position.y);
             bigAttack = Instantiate(player.attaqueForte, SpawnPosition, Quaternion.identity);
         }
-        inAttack = true;
+        inAttack2 = true;
         stopAttack = true;
         speedX = 1;
         yield return new WaitForSecondsRealtime(0.2f);
         Destroy(bigAttack);
         speedOnAir();
         stopAttack = false;
-        yield return new WaitForSecondsRealtime(1.5f / player.attackSpeed);
+        yield return new WaitForSecondsRealtime(1f / player.attackSpeed);
 
-        inAttack = false;
+        inAttack2 = false;
         yield return null;
         StartCoroutine(HeavyAttack());
     }
@@ -185,7 +192,7 @@ public class PlayerController : MonoBehaviour
     // Powers 
     IEnumerator Sun()
     {
-        yield return new WaitUntil(() => Input.GetButtonDown("Fire3") && inAttack == false && player.unlockSun == true && player.currentRage >= 60 && player.mort == false);
+        yield return new WaitUntil(() => Input.GetButtonDown("Fire3") && inAttack == false && inAttack2 == false && player.unlockSun == true && player.currentRage >= 60 && player.mort == false);
 
         player.currentRage -= 60;
         if (player.lastAxis >= 0.1f)
@@ -200,6 +207,7 @@ public class PlayerController : MonoBehaviour
             SunRay = Instantiate(player.sunBeam, SpawnPosition, Quaternion.identity);
         }
         inAttack = true;
+        inAttack2 = true;
         stopAttack = true;
         speedX = 0;
         yield return new WaitForSecondsRealtime(1.5f);
@@ -209,6 +217,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSecondsRealtime(1.5f / player.attackSpeed);
 
         inAttack = false;
+        inAttack2 = false;
         yield return null;
 
         StartCoroutine(Sun());

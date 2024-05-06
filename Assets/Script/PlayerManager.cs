@@ -14,6 +14,7 @@ public class PlayerManager : MonoBehaviour
     public int currentRage;
     public int maxRage;
     public int RageSections;
+    public int combo = 3;
 
     // Player 
 

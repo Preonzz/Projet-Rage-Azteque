@@ -31,12 +31,13 @@ public class DummyController : MonoBehaviour
         }
         XEnemyPosition = transform.position.x;
 
+        //déplacement à droite
         if (XEnemyPosition < player.transform.position.x && player.transform.position.x - XEnemyPosition > enemyAttackRange) 
         {
             Debug.Log("Droite");
             enemyBody.velocity = new Vector2(enemySpeed, enemyBody.velocity.y);
         }
-
+        //déplacement à gauche
         if (XEnemyPosition > player.transform.position.x && XEnemyPosition - player.transform.position.x > enemyAttackRange)
         {
             Debug.Log("Gauche");
@@ -127,6 +128,7 @@ public class DummyController : MonoBehaviour
     {
         yield return new WaitUntil(() => player.transform.position.x - XEnemyPosition < enemyAttackRange && player.transform.position.x - XEnemyPosition > -enemyAttackRange);
         Debug.Log("attack ennemie");
+        yield return new WaitForSeconds(0.2f);
         if (player.transform.position.x - XEnemyPosition > 0)
         {
             SpawnPosition = new Vector2(transform.position.x + 0.8f, transform.position.y);
@@ -138,12 +140,14 @@ public class DummyController : MonoBehaviour
             SpawnPosition = new Vector2(transform.position.x - 0.8f, transform.position.y);
             Attack = Instantiate(enemyAttack, SpawnPosition, Quaternion.identity);
         }
-        yield return new WaitForSecondsRealtime(0.2f);
+        yield return new WaitForSecondsRealtime(0.02f);
         Destroy(Attack);
 
         yield return new WaitForSecondsRealtime(1f);
 
         StartCoroutine(EnemyAttack());
     }
+
+
 }
 

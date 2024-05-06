@@ -311,6 +311,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dd0660d18ebec940bdfcc4958ecdcae, type: 3}
+--- !u!1 &1265559609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6096778706516364207, guid: 35981c3dc03ad90469ab6c494b781c55, type: 3}
+  m_PrefabInstance: {fileID: 2818470892520490198}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1741053254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -441,6 +446,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 206458354989013705, guid: 35981c3dc03ad90469ab6c494b781c55, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 735096114}
+    - target: {fileID: 206458354989013705, guid: 35981c3dc03ad90469ab6c494b781c55, type: 3}
+      propertyPath: sniper
+      value: 
+      objectReference: {fileID: 1265559609}
+    - target: {fileID: 1366486915524026330, guid: 35981c3dc03ad90469ab6c494b781c55, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1979900966129790906, guid: 35981c3dc03ad90469ab6c494b781c55, type: 3}
       propertyPath: m_Name
       value: Sniper
@@ -488,6 +505,10 @@ PrefabInstance:
     - target: {fileID: 2185701520386466700, guid: 35981c3dc03ad90469ab6c494b781c55, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207092479901472736, guid: 35981c3dc03ad90469ab6c494b781c55, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
