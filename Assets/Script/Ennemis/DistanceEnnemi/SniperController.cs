@@ -9,8 +9,6 @@ public class SniperController : MonoBehaviour
     public GameObject player;
     public GameObject sniper;
     Vector3 playerPosition;
-    RaycastHit2D ray;
-    Quaternion aim;
     // Start is called before the first frame update
     void Start()
     {
