@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class SniperController : MonoBehaviour
@@ -7,6 +9,8 @@ public class SniperController : MonoBehaviour
     public GameObject player;
     public GameObject sniper;
     Vector3 playerPosition;
+    RaycastHit2D ray;
+    Quaternion aim;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +26,9 @@ public class SniperController : MonoBehaviour
     IEnumerator Aim()
     {
         playerPosition = player.transform.position;
-        Vector3 rotation = playerPosition - sniper.transform.position;
-        float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-        sniper.transform.rotation = Quaternion.Euler(0, 0, rotZ);
+        Vector3 direction = playerPosition - sniper.transform.position;
+        Quaternion aimRotation = Quaternion.LookRotation(direction);
+        sniper.transform.rotation = aimRotation;
         Debug.Log("ça marche");
         yield return new WaitForSecondsRealtime(0.1f);
 
