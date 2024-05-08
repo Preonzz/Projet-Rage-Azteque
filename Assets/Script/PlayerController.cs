@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
     float TimerSaut;
     public float TempsSaut = 0.1f;
     bool jumping = false;
-    float interAttack = 1f;
 
     public Vector2 SpawnPosition;
 

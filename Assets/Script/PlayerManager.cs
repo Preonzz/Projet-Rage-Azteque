@@ -11,6 +11,7 @@ public class PlayerManager : MonoBehaviour
 
     public int Health;
     public int MaxHealth;
+    public GameObject lifeBar;
     public int currentRage;
     public int maxRage;
     public int RageSections;
@@ -61,6 +62,8 @@ public class PlayerManager : MonoBehaviour
         if (collision.gameObject.tag == ("EnemySmash"))
         {
             Health -= 10;
+            lifeBar.transform.localScale = new Vector2(lifeBar.transform.localScale.x * Health/100, lifeBar.transform.localScale.y);
+
         }
 
         if (Health <= 0)
