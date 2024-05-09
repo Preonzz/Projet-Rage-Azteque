@@ -62,8 +62,8 @@ public class PlayerManager : MonoBehaviour
     IEnumerator PositionX()
     {
         XPlayerPosition = transform.position.x;
-        rageBar.transform.localScale = new Vector2(barOfRageBar * currentRage / 100,lifeBar.transform.localScale.y);
-        lifeBar.transform.localScale = new Vector2(barOfLifeBar * Health / 100, lifeBar.transform.localScale.y);
+        rageBar.transform.localScale = new Vector2(barOfRageBar * currentRage / MaxHealth,lifeBar.transform.localScale.y);
+        lifeBar.transform.localScale = new Vector2(barOfLifeBar * Health / maxRage, lifeBar.transform.localScale.y);
         yield return null;
         StartCoroutine(PositionX());
     }
@@ -80,7 +80,11 @@ public class PlayerManager : MonoBehaviour
         if (collision.gameObject.tag == ("EnemySmash"))
         {
             Health -= 10;
-
+            currentRage += 2;
+            if (currentRage > maxRage)
+            {
+                currentRage = maxRage;
+            }
 
         }
 

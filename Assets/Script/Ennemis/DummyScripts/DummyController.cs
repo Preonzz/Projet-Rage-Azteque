@@ -14,6 +14,8 @@ public class DummyController : MonoBehaviour
     public Vector2 SpawnPosition;
     GameObject Attack;
     public GameObject enemyAttack;
+    int freezeTime = 0;
+    bool isFreeze = false;
 
     //enemy dans le soleil
     bool enemyInSun = false;
@@ -22,6 +24,7 @@ public class DummyController : MonoBehaviour
     {
         StartCoroutine(SunPulse());
         StartCoroutine(EnemyAttack());
+        StartCoroutine (InFreeze());
     }
     void FixedUpdate()
     {
@@ -32,17 +35,21 @@ public class DummyController : MonoBehaviour
         XEnemyPosition = transform.position.x;
 
         //déplacement à droite
-        if (XEnemyPosition < player.transform.position.x && player.transform.position.x - XEnemyPosition > enemyAttackRange) 
+        if (isFreeze == false)
         {
-            Debug.Log("Droite");
-            enemyBody.velocity = new Vector2(enemySpeed, enemyBody.velocity.y);
+            if (XEnemyPosition < player.transform.position.x && player.transform.position.x - XEnemyPosition > enemyAttackRange)
+            {
+                Debug.Log("Droite");
+                enemyBody.velocity = new Vector2(enemySpeed, enemyBody.velocity.y);
+            }
+            //déplacement à gauche
+            if (XEnemyPosition > player.transform.position.x && XEnemyPosition - player.transform.position.x > enemyAttackRange)
+            {
+                Debug.Log("Gauche");
+                enemyBody.velocity = new Vector2(-enemySpeed, enemyBody.velocity.y);
+            }
         }
-        //déplacement à gauche
-        if (XEnemyPosition > player.transform.position.x && XEnemyPosition - player.transform.position.x > enemyAttackRange)
-        {
-            Debug.Log("Gauche");
-            enemyBody.velocity = new Vector2(-enemySpeed, enemyBody.velocity.y);
-        }
+
 
     }
 
@@ -51,6 +58,8 @@ public class DummyController : MonoBehaviour
         if (other.gameObject.tag == ("Light Attack"))
         {
             HP -= 10;
+            isFreeze = true;
+            freezeTime += 2;
             GameManager.Instance.player.currentRage += 2;
             Debug.Log(HP);
             if (GameManager.Instance.player.lastAxis >= 0.1f)
@@ -67,7 +76,7 @@ public class DummyController : MonoBehaviour
         if (other.gameObject.tag == ("Heavy Attack"))
         {
             HP -= 25;
-
+            freezeTime += 3;
             GameManager.Instance.player.currentRage += 4;
 
             Debug.Log(HP);
@@ -111,6 +120,7 @@ public class DummyController : MonoBehaviour
         yield return new WaitUntil(() => enemyInSun == true);
         HP -= GameManager.Instance.player.sunDmg;
         Debug.Log(HP);
+        freezeTime += 1;
         GameManager.Instance.player.currentRage += 1;
         if (GameManager.Instance.player.lastAxis >= 0.1f)
         {
@@ -126,26 +136,47 @@ public class DummyController : MonoBehaviour
     }
     IEnumerator EnemyAttack()
     {
-        yield return new WaitUntil(() => player.transform.position.x - XEnemyPosition < enemyAttackRange && player.transform.position.x - XEnemyPosition > -enemyAttackRange);
+        yield return new WaitUntil(() => player.transform.position.x - XEnemyPosition < enemyAttackRange && player.transform.position.x - XEnemyPosition > -enemyAttackRange && isFreeze == false);
         Debug.Log("attack ennemie");
         yield return new WaitForSeconds(0.5f);
-        if (player.transform.position.x - XEnemyPosition > 0)
-        {
-            SpawnPosition = new Vector2(transform.position.x + 0.8f, transform.position.y);
-            Attack = Instantiate(enemyAttack, SpawnPosition, Quaternion.identity);
-        }
 
-        if (player.transform.position.x - XEnemyPosition < 0)
+        if (isFreeze == false)
         {
-            SpawnPosition = new Vector2(transform.position.x - 0.8f, transform.position.y);
-            Attack = Instantiate(enemyAttack, SpawnPosition, Quaternion.identity);
+            if (player.transform.position.x - XEnemyPosition > 0)
+            {
+                SpawnPosition = new Vector2(transform.position.x + 0.8f, transform.position.y);
+                Attack = Instantiate(enemyAttack, SpawnPosition, Quaternion.identity);
+            }
+
+            if (player.transform.position.x - XEnemyPosition < 0)
+            {
+                SpawnPosition = new Vector2(transform.position.x - 0.8f, transform.position.y);
+                Attack = Instantiate(enemyAttack, SpawnPosition, Quaternion.identity);
+            }
         }
+        
         yield return new WaitForSecondsRealtime(0.02f);
         Destroy(Attack);
 
         yield return new WaitForSecondsRealtime(1.5f);
 
         StartCoroutine(EnemyAttack());
+    }
+
+    IEnumerator InFreeze()
+    {
+
+        yield return new WaitUntil(() => freezeTime != 0);
+
+        yield return new WaitForSecondsRealtime(0.5f);
+        freezeTime -= 1;
+
+        if (freezeTime == 0)
+        {
+            isFreeze = false;
+        }
+
+
     }
 
 
