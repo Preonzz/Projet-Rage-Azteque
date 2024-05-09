@@ -128,7 +128,7 @@ public class DummyController : MonoBehaviour
     {
         yield return new WaitUntil(() => player.transform.position.x - XEnemyPosition < enemyAttackRange && player.transform.position.x - XEnemyPosition > -enemyAttackRange);
         Debug.Log("attack ennemie");
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.5f);
         if (player.transform.position.x - XEnemyPosition > 0)
         {
             SpawnPosition = new Vector2(transform.position.x + 0.8f, transform.position.y);

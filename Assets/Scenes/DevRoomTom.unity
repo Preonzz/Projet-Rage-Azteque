@@ -316,11 +316,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6096778706516364207, guid: 35981c3dc03ad90469ab6c494b781c55, type: 3}
   m_PrefabInstance: {fileID: 2818470892520490198}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1380028195 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8534336042672442941, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
-  m_PrefabInstance: {fileID: 1862411216}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1741053254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -390,10 +385,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 151864780043191572, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
-      propertyPath: lifeBar
-      value: 
-      objectReference: {fileID: 1380028195}
     - target: {fileID: 3809495722565081956, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -442,49 +433,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4883558102515769435, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4883558102515769435, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
-      propertyPath: m_Color.g
-      value: 0.6698113
-      objectReference: {fileID: 0}
-    - target: {fileID: 4883558102515769435, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
-      propertyPath: m_Color.r
-      value: 0.06773331
-      objectReference: {fileID: 0}
-    - target: {fileID: 4883558102515769435, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
-      propertyPath: m_DrawMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4883558102515769435, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
-      propertyPath: m_SpriteSortPoint
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8534336042672442941, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
-      propertyPath: m_Name
-      value: Life bar
-      objectReference: {fileID: 0}
-    - target: {fileID: 9010429225658268337, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+    - target: {fileID: 5428798698867541801, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.0972617
+      value: 0.37640816
       objectReference: {fileID: 0}
-    - target: {fileID: 9010429225658268337, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+    - target: {fileID: 5428798698867541801, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.28116408
+      value: 0.37640816
       objectReference: {fileID: 0}
-    - target: {fileID: 9010429225658268337, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+    - target: {fileID: 5428798698867541801, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.37640816
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428798698867541801, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.343
+      value: -5.52
       objectReference: {fileID: 0}
-    - target: {fileID: 9010429225658268337, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+    - target: {fileID: 5428798698867541801, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.015
-      objectReference: {fileID: 0}
-    - target: {fileID: 9010429225658268337, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 10.321
+      value: 3.28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -521,7 +488,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2185701520386466700, guid: 35981c3dc03ad90469ab6c494b781c55, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.96
+      value: 3.44
       objectReference: {fileID: 0}
     - target: {fileID: 2185701520386466700, guid: 35981c3dc03ad90469ab6c494b781c55, type: 3}
       propertyPath: m_LocalPosition.y

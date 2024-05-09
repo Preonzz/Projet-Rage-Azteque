@@ -11,7 +11,11 @@ public class PlayerManager : MonoBehaviour
 
     public int Health;
     public int MaxHealth;
+    int preLife;
     public GameObject lifeBar;
+    public float barOfLifeBar;
+    public GameObject rageBar;
+    public float barOfRageBar;
     public int currentRage;
     public int maxRage;
     public int RageSections;
@@ -47,22 +51,36 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         game = GameManager.Instance;
+        barOfLifeBar = lifeBar.transform.localScale.x;
+        barOfRageBar = rageBar.transform.localScale.x;
+        preLife = Health;
         StartCoroutine(PositionX());
+        StartCoroutine(LifeCursor());
+
     }
 
     IEnumerator PositionX()
     {
         XPlayerPosition = transform.position.x;
+        rageBar.transform.localScale = new Vector2(barOfRageBar * currentRage / 100,lifeBar.transform.localScale.y);
+        lifeBar.transform.localScale = new Vector2(barOfLifeBar * Health / 100, lifeBar.transform.localScale.y);
         yield return null;
         StartCoroutine(PositionX());
     }
 
+    IEnumerator LifeCursor()
+    {
+        yield return new WaitUntil(() => preLife != Health );
+
+        yield return null;
+        StartCoroutine(LifeCursor());
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == ("EnemySmash"))
         {
             Health -= 10;
-            lifeBar.transform.localScale = new Vector2(lifeBar.transform.localScale.x * Health/100, lifeBar.transform.localScale.y);
+
 
         }
 

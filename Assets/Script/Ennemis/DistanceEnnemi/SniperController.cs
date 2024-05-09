@@ -27,7 +27,6 @@ public class SniperController : MonoBehaviour
         Vector3 direction = playerPosition - sniper.transform.position;
         Quaternion aimRotation = Quaternion.LookRotation(direction);
         sniper.transform.rotation = aimRotation;
-        Debug.Log("ça marche");
         yield return new WaitForSecondsRealtime(0.1f);
 
         StartCoroutine(Aim());
