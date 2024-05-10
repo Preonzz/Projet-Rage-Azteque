@@ -76,6 +76,7 @@ public class DummyController : MonoBehaviour
         if (other.gameObject.tag == ("Heavy Attack"))
         {
             HP -= 25;
+            isFreeze = true;
             freezeTime += 3;
             GameManager.Instance.player.currentRage += 4;
 
@@ -120,6 +121,7 @@ public class DummyController : MonoBehaviour
         yield return new WaitUntil(() => enemyInSun == true);
         HP -= GameManager.Instance.player.sunDmg;
         Debug.Log(HP);
+        isFreeze = true;
         freezeTime += 1;
         GameManager.Instance.player.currentRage += 1;
         if (GameManager.Instance.player.lastAxis >= 0.1f)
@@ -168,7 +170,7 @@ public class DummyController : MonoBehaviour
 
         yield return new WaitUntil(() => freezeTime != 0);
 
-        yield return new WaitForSecondsRealtime(0.5f);
+        yield return new WaitForSecondsRealtime(0.2f);
         freezeTime -= 1;
 
         if (freezeTime == 0)
@@ -176,7 +178,7 @@ public class DummyController : MonoBehaviour
             isFreeze = false;
         }
 
-
+        StartCoroutine(InFreeze());
     }
 
 

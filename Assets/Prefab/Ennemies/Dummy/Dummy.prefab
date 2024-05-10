@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -145,10 +145,10 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 500
-  m_LinearDrag: 0
+  m_LinearDrag: 0.61
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: cbfab933a47f2bf4985e986a7525ba8a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
   HP: 100
   enemyBody: {fileID: 868762539282107410}
   player: {fileID: 4483547667614277514, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
-  enemyAttackRange: 2
+  enemyAttackRange: 1.7
   enemySpeed: 3
   SpawnPosition: {x: 0, y: 0}
   enemyAttack: {fileID: 6537886629248021128, guid: f1ed270dce23da74198150568705b28e, type: 3}
