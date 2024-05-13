@@ -32,6 +32,7 @@ public class DummyController : MonoBehaviour
         if (HP <= 0)
         {
             Destroy(gameObject);
+            GameManager.Instance.camera.isCameraShaking = false;
         }
         XEnemyPosition = transform.position.x;
 
@@ -61,6 +62,7 @@ public class DummyController : MonoBehaviour
             HP -= 10;
             isFreeze = true;
             freezeTime += 2;
+            StartCoroutine(GameManager.Instance.camera.ShakeCamera(UnityEngine.Random.Range(0.5f, 0.7f), 0.1f));
             GameManager.Instance.player.currentRage += 2;
             Debug.Log(HP);
             if (GameManager.Instance.player.lastAxis >= 0.1f)
@@ -79,6 +81,7 @@ public class DummyController : MonoBehaviour
             HP -= 25;
             isFreeze = true;
             freezeTime += 3;
+            StartCoroutine(GameManager.Instance.camera.ShakeCamera(UnityEngine.Random.Range(1.2f, 1.5f), 0.2f));
             GameManager.Instance.player.currentRage += 4;
 
             Debug.Log(HP);
@@ -102,6 +105,7 @@ public class DummyController : MonoBehaviour
             GameManager.Instance.player.currentRage = GameManager.Instance.player.maxRage;
         }
 
+
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -120,6 +124,7 @@ public class DummyController : MonoBehaviour
     IEnumerator SunPulse()
     {
         yield return new WaitUntil(() => enemyInSun == true);
+        StartCoroutine(GameManager.Instance.camera.ShakeCamera(UnityEngine.Random.Range(0.5f, 0.7f), 0.1f));
         HP -= GameManager.Instance.player.sunDmg;
         Debug.Log(HP);
         isFreeze = true;

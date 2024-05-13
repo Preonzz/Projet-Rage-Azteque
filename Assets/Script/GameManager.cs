@@ -13,10 +13,12 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
     public PlayerManager player;
+    public CameraManager camera;
     // Start is called before the first frame update
     void Start()
     {
         player = FindAnyObjectByType<PlayerManager>();
+        camera = FindAnyObjectByType<CameraManager>();
     }
 
     // Update is called once per frame

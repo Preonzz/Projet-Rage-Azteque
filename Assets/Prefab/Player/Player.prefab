@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5428798698867541801}
   - component: {fileID: 4552867356411300280}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: barre_de_vie_I_rage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2197269448398444728}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.21, y: 3.66, z: 10}
-  m_LocalScale: {x: 0.30173, y: 0.30173, z: 0.30173}
+  m_LocalPosition: {x: -5.7, y: 3.47, z: 10}
+  m_LocalScale: {x: 0.34670016, y: 0.34670016, z: 0.34670016}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8886651965696189361}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 438036540846326706}
   - component: {fileID: 2000448648233017120}
   - component: {fileID: 8816359341049976886}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5034742576522708199}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Life
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,9 +226,10 @@ GameObject:
   - component: {fileID: 7142156631627324570}
   - component: {fileID: 151864780043191572}
   - component: {fileID: 4404316776100348388}
-  m_Layer: 0
+  - component: {fileID: 4504253296727223196}
+  m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -404,6 +405,7 @@ MonoBehaviour:
   maxRage: 100
   RageSections: 0
   combo: 3
+  particule: {fileID: 0}
   fallSpeed: -2
   moveSpeed: 15
   jumpForce: 5
@@ -465,6 +467,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &4504253296727223196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4483547667614277514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77558d38563321f44b779aa28a3bcc30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 4483547667614277514}
+  isCameraShaking: 0
+  currentShakePower: 1
+  cameraReturnSpeed: 1
 --- !u!1 &5211193860913893486
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,7 +492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8886651965696189361}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -508,7 +526,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5040572120717135951}
   - component: {fileID: 4770384058809492863}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rage bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -523,7 +541,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5456449291334073929}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.9787, y: -0.021172537, z: 0.8148365}
+  m_LocalPosition: {x: 0.9787, y: -0.021172537, z: 0.206}
   m_LocalScale: {x: 1.9204009, y: 0.32488358, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -593,7 +611,7 @@ GameObject:
   - component: {fileID: 6774591816825449881}
   - component: {fileID: 6796773608651640428}
   - component: {fileID: 245497807815861526}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: feet
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -682,7 +700,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7313540998283357081}
   - component: {fileID: 167836058469886527}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: rageBar2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -766,7 +784,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9010429225658268337}
   - component: {fileID: 4883558102515769435}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Life bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
