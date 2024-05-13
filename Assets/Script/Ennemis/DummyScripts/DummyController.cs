@@ -16,6 +16,7 @@ public class DummyController : MonoBehaviour
     public GameObject enemyAttack;
     int freezeTime = 0;
     bool isFreeze = false;
+    public float meleeVision = 10;
 
     //enemy dans le soleil
     bool enemyInSun = false;
@@ -35,7 +36,7 @@ public class DummyController : MonoBehaviour
         XEnemyPosition = transform.position.x;
 
         //déplacement à droite
-        if (isFreeze == false)
+        if (isFreeze == false && player.transform.position.x - XEnemyPosition > -meleeVision && player.transform.position.x - XEnemyPosition < meleeVision)
         {
             if (XEnemyPosition < player.transform.position.x && player.transform.position.x - XEnemyPosition > enemyAttackRange)
             {
@@ -144,13 +145,13 @@ public class DummyController : MonoBehaviour
 
         if (isFreeze == false)
         {
-            if (player.transform.position.x - XEnemyPosition > 0)
+            if (player.transform.position.x - XEnemyPosition > 0 )
             {
                 SpawnPosition = new Vector2(transform.position.x + 0.8f, transform.position.y);
                 Attack = Instantiate(enemyAttack, SpawnPosition, Quaternion.identity);
             }
 
-            if (player.transform.position.x - XEnemyPosition < 0)
+            if (player.transform.position.x - XEnemyPosition < 0 )
             {
                 SpawnPosition = new Vector2(transform.position.x - 0.8f, transform.position.y);
                 Attack = Instantiate(enemyAttack, SpawnPosition, Quaternion.identity);

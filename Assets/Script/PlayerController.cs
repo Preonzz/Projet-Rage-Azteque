@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
         }
         
 
-        if (inAttack == false)
+        if (inAttack == false && inAttack2 == false)
         {
             speedOnAir();
         }

@@ -206,7 +206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7272710179861762444, guid: d95dc0a6b430d7a4d9401f4a1ccaefce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.32
+      value: 15.74
       objectReference: {fileID: 0}
     - target: {fileID: 7272710179861762444, guid: d95dc0a6b430d7a4d9401f4a1ccaefce, type: 3}
       propertyPath: m_LocalPosition.y
@@ -600,8 +600,8 @@ PrefabInstance:
       value: Sniper
       objectReference: {fileID: 0}
     - target: {fileID: 2113782798416889335, guid: 35981c3dc03ad90469ab6c494b781c55, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 0.5
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2185701520386466700, guid: 35981c3dc03ad90469ab6c494b781c55, type: 3}
       propertyPath: m_RootOrder

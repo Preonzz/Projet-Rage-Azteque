@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5019727197457592935
 SpriteRenderer:
@@ -173,8 +173,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 100
   enemyBody: {fileID: 868762539282107410}
-  player: {fileID: 4483547667614277514, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+  player: {fileID: 0}
   enemyAttackRange: 1.7
   enemySpeed: 3
   SpawnPosition: {x: 0, y: 0}
   enemyAttack: {fileID: 6537886629248021128, guid: f1ed270dce23da74198150568705b28e, type: 3}
+  meleeVision: 10
