@@ -42,6 +42,7 @@ public class SniperController : MonoBehaviour
             HP -= 10;
             isFreeze = true;
             freezeTime += 2;
+            StartCoroutine(GameManager.Instance.camera.ShakeCamera(UnityEngine.Random.Range(0.5f, 0.7f), 0.1f));
             GameManager.Instance.player.currentRage += 2;
             Debug.Log(HP);
             if (GameManager.Instance.player.lastAxis >= 0.1f)
@@ -60,6 +61,7 @@ public class SniperController : MonoBehaviour
             HP -= 25;
             isFreeze = true;
             freezeTime += 3;
+            StartCoroutine(GameManager.Instance.camera.ShakeCamera(UnityEngine.Random.Range(1.2f, 1.5f), 0.2f));
             GameManager.Instance.player.currentRage += 4;
 
             Debug.Log(HP);
@@ -102,6 +104,7 @@ public class SniperController : MonoBehaviour
     {
         yield return new WaitUntil(() => enemyInSun == true);
         HP -= GameManager.Instance.player.sunDmg;
+        StartCoroutine(GameManager.Instance.camera.ShakeCamera(UnityEngine.Random.Range(0.5f, 0.7f), 0.1f));
         Debug.Log(HP);
         isFreeze = true;
         freezeTime += 1;

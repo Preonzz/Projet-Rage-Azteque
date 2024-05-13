@@ -14,14 +14,14 @@ public class CameraManager : MonoBehaviour
     private void Start()
     {
         mainCamera = Camera.main;
-        baseCameraPosition = new Vector3 (player.transform.position.x, player.transform.position.y, -13) ;
+        baseCameraPosition = new Vector3 (player.transform.position.x, player.transform.position.y + 2, -13) ;
     }
 
     // Update is called once per frame
     void Update()
     {
         ShakeCameraUpdate();
-        baseCameraPosition = new Vector3(player.transform.position.x, player.transform.position.y, -13);
+        baseCameraPosition = new Vector3(player.transform.position.x, player.transform.position.y + 2, -13);
     }
 
     public IEnumerator ShakeCamera(float power, float shakeTime)
