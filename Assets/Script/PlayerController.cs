@@ -240,7 +240,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator Heal()
     {
         yield return new WaitUntil(() => Input.GetButtonDown("Fire5") && inAttack == false && player.unlockHeal == true && player.currentRage >= 20 && player.mort == false && player.Health != player.MaxHealth);
-        player.currentRage -= 20;
+        player.currentRage -= 40;
         player.Health += player.healQuantity;
         if (player.Health > player.MaxHealth)
         {

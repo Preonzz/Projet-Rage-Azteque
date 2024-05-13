@@ -20,6 +20,7 @@ public class PlayerManager : MonoBehaviour
     public int maxRage;
     public int RageSections;
     public int combo = 3;
+    public ParticleSystem particule;
 
     // Player 
 
@@ -88,9 +89,25 @@ public class PlayerManager : MonoBehaviour
 
         }
 
+        if (collision == particule)
+        {
+            Health -= 10;
+            currentRage += 2;
+            if (currentRage > maxRage)
+            {
+                currentRage = maxRage;
+            }
+
+        }
+
+
         if (Health <= 0)
         {
             mort = true;
         }
+
+
     }
+
+
 }
