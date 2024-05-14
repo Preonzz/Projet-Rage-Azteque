@@ -48,6 +48,8 @@ public class PlayerManager : MonoBehaviour
 
     public GameObject sunBeam;
 
+    //statistic
+    public int enemyKilled;
     // Start is called before the first frame update
     void Start()
     {

@@ -106,10 +106,8 @@ public class SniperController : MonoBehaviour
         yield return new WaitUntil(() => enemyInSun == true);
         HP -= GameManager.Instance.player.sunDmg;
         StartCoroutine(GameManager.Instance.camera.ShakeCamera(UnityEngine.Random.Range(0.5f, 0.7f), 0.1f));
-        Debug.Log(HP);
         isFreeze = true;
         freezeTime += 1;
-        GameManager.Instance.player.currentRage += 1;
         if (GameManager.Instance.player.lastAxis >= 0.1f)
         {
             enemyBody.velocity = new Vector2(0.5f, 1);
