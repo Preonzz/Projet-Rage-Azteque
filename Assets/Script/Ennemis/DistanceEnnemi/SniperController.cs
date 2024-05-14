@@ -32,6 +32,7 @@ public class SniperController : MonoBehaviour
         if (HP <= 0)
         {
             Destroy(gameObject);
+            GameManager.Instance.player.enemyKilled += 1;
             GameManager.Instance.camera.isCameraShaking = false;
         }
     }

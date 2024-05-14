@@ -32,6 +32,7 @@ public class DummyController : MonoBehaviour
         if (HP <= 0)
         {
             Destroy(gameObject);
+            GameManager.Instance.player.enemyKilled += 1;
             GameManager.Instance.camera.isCameraShaking = false;
         }
         XEnemyPosition = transform.position.x;
@@ -126,10 +127,8 @@ public class DummyController : MonoBehaviour
         yield return new WaitUntil(() => enemyInSun == true);
         StartCoroutine(GameManager.Instance.camera.ShakeCamera(UnityEngine.Random.Range(0.5f, 0.7f), 0.1f));
         HP -= GameManager.Instance.player.sunDmg;
-        Debug.Log(HP);
         isFreeze = true;
         freezeTime += 1;
-        GameManager.Instance.player.currentRage += 1;
         if (GameManager.Instance.player.lastAxis >= 0.1f)
         {
             enemyBody.velocity = new Vector2(0.5f, 1);
