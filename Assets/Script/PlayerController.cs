@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
     bool stopAttack = false;
 
     GameObject SunRay;
-
     void Start()
     {
         rememberSpeedX = speedX;
@@ -228,8 +227,9 @@ public class PlayerController : MonoBehaviour
         player.currentRage -= 40;
         player.enraged = true;
         player.attackSpeed = 5;
-        Debug.Log("Rage");
+        player.enragedParticle.Play();
         yield return new WaitForSecondsRealtime(player.rageDuration);
+        player.enragedParticle.Stop();
         player.enraged = false;
         player.attackSpeed = 1;
         yield return null;
@@ -239,15 +239,18 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Heal()
     {
-        yield return new WaitUntil(() => Input.GetButtonDown("Fire5") && inAttack == false && player.unlockHeal == true && player.currentRage >= 40 && player.mort == false && player.Health != player.MaxHealth);
+        yield return new WaitUntil(() => Input.GetButtonDown("Fire5") && inAttack == false && inAttack2 == false && player.unlockHeal == true && player.currentRage >= 40 && player.mort == false && player.Health != player.MaxHealth);
         player.currentRage -= 40;
         player.Health += player.healQuantity;
         if (player.Health > player.MaxHealth)
         {
             player.Health = player.MaxHealth;
         }
-        Debug.Log("Heal");
-        yield return null;
+        player.particule.Play();
+        speedX = 0;
+        yield return new WaitForSeconds(0.5f);
+        speedOnAir();
+        player.particule.Stop();
 
         StartCoroutine(Heal());
     }

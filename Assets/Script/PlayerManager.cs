@@ -21,6 +21,7 @@ public class PlayerManager : MonoBehaviour
     public int RageSections;
     public int combo = 3;
     public ParticleSystem particule;
+    public ParticleSystem enragedParticle;
 
     // Player 
 
@@ -57,6 +58,8 @@ public class PlayerManager : MonoBehaviour
         barOfLifeBar = lifeBar.transform.localScale.x;
         barOfRageBar = rageBar.transform.localScale.x;
         preLife = Health;
+        particule.Stop();
+        enragedParticle.Stop();
         StartCoroutine(PositionX());
         StartCoroutine(LifeCursor());
 
