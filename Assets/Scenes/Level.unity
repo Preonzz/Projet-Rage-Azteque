@@ -1582,6 +1582,10 @@ PrefabInstance:
       propertyPath: fallSpeed
       value: -5
       objectReference: {fileID: 0}
+    - target: {fileID: 2000448648233017120, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+      propertyPath: orthographic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3809495722565081956, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1629,6 +1633,18 @@ PrefabInstance:
     - target: {fileID: 4483547667614277514, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040572120717135951, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.19472596
+      objectReference: {fileID: 0}
+    - target: {fileID: 7313540998283357081, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.24172461
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010429225658268337, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
