@@ -45,6 +45,12 @@ public class PlayerController : MonoBehaviour
             jumping = true;
             TimerSaut = TempsSaut;
         }
+
+        if (inAttack == false && inAttack2 == false)
+        {
+            speedOnAir();
+        }
+
         if (TimerSaut > 0)
         {
             TimerSaut -= Time.deltaTime;
@@ -79,10 +85,7 @@ public class PlayerController : MonoBehaviour
         }
         
 
-        if (inAttack == false && inAttack2 == false)
-        {
-            speedOnAir();
-        }
+        
 
     }
 
