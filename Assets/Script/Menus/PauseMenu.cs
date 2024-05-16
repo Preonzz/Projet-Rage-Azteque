@@ -36,4 +36,22 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         pause = true;
     }
+
+    public void BackToTheMainMenuButton()
+    {
+        PauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        pause = false;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+    }
+
+    public void QuitButton()
+    {
+        Application.Quit();
+    }
+
+    public void ResumeButton()
+    {
+        ResumeGame();
+    }
 }
