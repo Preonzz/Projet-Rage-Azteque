@@ -383,7 +383,7 @@ MonoBehaviour:
   body: {fileID: 9100436455386613256}
   speedX: 10
   speedY: 0
-  TempsSaut: 0
+  TempsSaut: 100
   SpawnPosition: {x: 0, y: 0}
 --- !u!114 &151864780043191572
 MonoBehaviour:
