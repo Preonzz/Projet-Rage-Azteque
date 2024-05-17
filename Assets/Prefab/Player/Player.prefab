@@ -252,7 +252,7 @@ Transform:
   - {fileID: 6774591816825449881}
   - {fileID: 438036540846326706}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1802743384104618119
 SpriteRenderer:
@@ -383,7 +383,7 @@ MonoBehaviour:
   body: {fileID: 9100436455386613256}
   speedX: 10
   speedY: 0
-  TempsSaut: 0.2
+  TempsSaut: 0
   SpawnPosition: {x: 0, y: 0}
 --- !u!114 &151864780043191572
 MonoBehaviour:
@@ -410,6 +410,7 @@ MonoBehaviour:
   combo: 3
   particule: {fileID: 1411324763292477641}
   enragedParticle: {fileID: 5886765567837785325}
+  pause: 0
   fallSpeed: -10
   moveSpeed: 15
   jumpForce: 5
@@ -5534,6 +5535,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2720583462277944142}
   - component: {fileID: 7039414827906473768}
+  - component: {fileID: 1563305786620933399}
   m_Layer: 0
   m_Name: Chara
   m_TagString: Untagged
@@ -5608,6 +5610,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1563305786620933399
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6936804555629043086}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ead68ff20ee2ab24f8f4a8292cb36700, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7138944197578234577
 GameObject:
   m_ObjectHideFlags: 0
