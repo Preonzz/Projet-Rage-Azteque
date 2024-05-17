@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     bool inAttack = false;
     bool inAttack2 = false;
     bool stopAttack = false;
+    float startJump = 0;
 
     GameObject SunRay;
     void Start()
@@ -39,7 +40,30 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (player.OnTheFloor == true && Input.GetButtonDown("Jump") && stopAttack == false && player.mort == false)
+        {
+            body.velocity = Vector2.up * player.jumpForce;
+            jumping = true;
+            TimerSaut = TempsSaut;
+        }
+
+        if (jumping == true && Input.GetButton("Jump") && stopAttack == false)
+        {
+            if (TimerSaut > 0)
+            {
+                body.velocity = Vector2.up * player.jumpForce * 2;
+            }
+        }
+
+        else
+        {
+            jumping = false;
+        }
+
+        if (jumping == false || TimerSaut <= 0)
+        {
+            body.AddForce(Vector2.up * player.fallSpeed);
+        }
     }
 
     private void FixedUpdate()
@@ -48,13 +72,6 @@ public class PlayerController : MonoBehaviour
         {
             body.velocity = new Vector2(Input.GetAxis("Horizontal") * speedX, body.velocity.y);
             move();
-        }
-
-        if (player.OnTheFloor == true && Input.GetButtonDown("Jump") && stopAttack == false && player.mort == false)
-        {
-            body.velocity = Vector2.up * player.jumpForce;
-            jumping = true;
-            TimerSaut = TempsSaut;
         }
 
         if (inAttack == false && inAttack2 == false)
@@ -67,24 +84,7 @@ public class PlayerController : MonoBehaviour
             TimerSaut -= Time.fixedDeltaTime;
         }
 
-        if (jumping == true && Input.GetButton("Jump") && stopAttack == false)
-        {
-            if (TimerSaut > 0)
-            {
-                body.velocity = Vector2.up * player.jumpForce * 2;
-            }
-        }
-        else
-        {
-            jumping = false;
-        }
 
-        if (jumping == false || TimerSaut <= 0)
-        {
-            body.AddForce(Vector2.up * player.fallSpeed);
-
-
-        }
     }
 
     // Deplacements 
