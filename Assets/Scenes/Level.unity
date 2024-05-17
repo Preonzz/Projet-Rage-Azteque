@@ -1644,7 +1644,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7142156631627324570, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: TempsSaut
-      value: 70
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 7313540998283357081, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1868,7 +1868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1147877348577162143, guid: 062faa5bf1cd3cb4da26774f3bd2c440, type: 3}
       propertyPath: minKill
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5873195295193374629, guid: 062faa5bf1cd3cb4da26774f3bd2c440, type: 3}
       propertyPath: m_RootOrder
