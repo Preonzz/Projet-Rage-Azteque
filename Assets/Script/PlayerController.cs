@@ -50,12 +50,36 @@ public class PlayerController : MonoBehaviour
             jumping = true;
             TimerSaut = TempsSaut;
         }
+        if (player.mort == false)
+        {
+            body.velocity = new Vector2(Input.GetAxis("Horizontal") * speedX, body.velocity.y);
+            if (stopAttack == false)
+            {
+                body.velocity = new Vector2(Input.GetAxis("Horizontal") * speedX, body.velocity.y);
+            }
+
+            if (stopAttack == true)
+            {
+                body.velocity = new Vector2(Input.GetAxis("Horizontal") * speedX, 0.5f);
+            }
+        }
+
+    }
+
+    private void FixedUpdate()
+    {
+
+
+        if (inAttack == false && inAttack2 == false)
+        {
+            speedOnAir();
+        }
 
         if (jumping == true && Input.GetButton("Jump") && stopAttack == false)
         {
             if (TimerSaut > 0)
             {
-                body.velocity = Vector2.up * player.jumpForce * 2;
+                body.velocity = new Vector2(body.velocity.x,player.jumpForce);
                 TimerSaut -= 1;
             }
         }
@@ -80,20 +104,6 @@ public class PlayerController : MonoBehaviour
         {
             body.velocity = fallPause;
             pauseMemory = false;
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        if (player.mort == false)
-        {
-            body.velocity = new Vector2(Input.GetAxis("Horizontal") * speedX, body.velocity.y);
-            move();
-        }
-
-        if (inAttack == false && inAttack2 == false)
-        {
-            speedOnAir();
         }
     }
 
@@ -125,15 +135,7 @@ public class PlayerController : MonoBehaviour
 
     void move()
     {
-        if (stopAttack == false)
-        {
-            body.velocity = new Vector2(Input.GetAxis("Horizontal") * speedX, body.velocity.y);
-        }
 
-        if (stopAttack == true)
-        {
-            body.velocity = new Vector2(Input.GetAxis("Horizontal") * speedX, 0.5f);
-        }
     }
     // Attaque 
 
