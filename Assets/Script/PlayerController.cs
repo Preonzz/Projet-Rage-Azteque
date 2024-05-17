@@ -15,6 +15,11 @@ public class PlayerController : MonoBehaviour
     public int TempsSaut = 20;
     bool jumping = false;
 
+    //pause
+    Vector2 fallPause;
+    bool pauseMemory = false;
+
+
     public Vector2 SpawnPosition;
 
     GameObject smallAttack;
@@ -63,6 +68,18 @@ public class PlayerController : MonoBehaviour
         if (jumping == false || TimerSaut <= 0)
         {
             body.AddForce(Vector2.up * player.fallSpeed);
+        }
+
+        if (player.pause == true && pauseMemory == false)
+        {
+            fallPause = body.velocity;
+            pauseMemory = true;
+        }
+
+        if (player.pause == false && pauseMemory == true)
+        {
+            body.velocity = fallPause;
+            pauseMemory = false;
         }
     }
 
