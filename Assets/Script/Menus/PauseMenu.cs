@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    public bool pause = false;
+    
 
     public GameObject PauseMenuUI;
     void Update()
     {
         if (Input.GetButtonDown("PauseButton"))
         {
-            if (pause == true)
+            if (GameManager.Instance.player.pause == true)
             {
                 ResumeGame();
             }
@@ -27,21 +27,21 @@ public class PauseMenu : MonoBehaviour
     {
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        pause = false;
+        GameManager.Instance.player.pause = false;
     }
 
     void PauseGame ()
     {
         PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
-        pause = true;
+        GameManager.Instance.player.pause = true;
     }
 
     public void BackToTheMainMenuButton()
     {
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        pause = false;
+        GameManager.Instance.player.pause = false;
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 

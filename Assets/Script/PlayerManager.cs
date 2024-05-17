@@ -23,6 +23,8 @@ public class PlayerManager : MonoBehaviour
     public ParticleSystem particule;
     public ParticleSystem enragedParticle;
 
+    public bool pause = false;
+
     // Player 
 
     public float fallSpeed;
