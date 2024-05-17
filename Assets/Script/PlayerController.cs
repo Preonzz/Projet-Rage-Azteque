@@ -39,6 +39,17 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    private void FixedUpdate()
+    {
+        if (player.mort == false)
+        {
+            body.velocity = new Vector2(Input.GetAxis("Horizontal") * speedX, body.velocity.y);
+            move();
+        }
+
         if (player.OnTheFloor == true && Input.GetButtonDown("Jump") && stopAttack == false && player.mort == false)
         {
             body.velocity = Vector2.up * player.jumpForce;
@@ -53,7 +64,7 @@ public class PlayerController : MonoBehaviour
 
         if (TimerSaut > 0)
         {
-            TimerSaut -= Time.deltaTime;
+            TimerSaut -= Time.fixedDeltaTime;
         }
 
         if (jumping == true && Input.GetButton("Jump") && stopAttack == false)
@@ -73,15 +84,6 @@ public class PlayerController : MonoBehaviour
             body.AddForce(Vector2.up * player.fallSpeed);
 
 
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        if (player.mort == false)
-        {
-            body.velocity = new Vector2(Input.GetAxis("Horizontal") * speedX, body.velocity.y);
-            move();
         }
     }
 
