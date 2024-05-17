@@ -3343,6 +3343,10 @@ PrefabInstance:
       value: -0.31
       objectReference: {fileID: 0}
     - target: {fileID: 7142156631627324570, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+      propertyPath: chara
+      value: 
+      objectReference: {fileID: 1697765439}
+    - target: {fileID: 7142156631627324570, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: TempsSaut
       value: 15
       objectReference: {fileID: 0}
@@ -5859,6 +5863,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas Pause Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 6498245051783611625, guid: b9d8a3106881e2e47bdd67de8c861a9e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8047,6 +8055,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1697765439 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6936804555629043086, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+  m_PrefabInstance: {fileID: 743206566}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1700792545
 PrefabInstance:
   m_ObjectHideFlags: 0

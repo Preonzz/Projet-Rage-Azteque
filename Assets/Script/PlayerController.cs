@@ -19,6 +19,10 @@ public class PlayerController : MonoBehaviour
     Vector2 fallPause;
     bool pauseMemory = false;
 
+    //graphic
+    public GameObject chara;
+    float scaleChara;
+    float scaleCharaMemory;
 
     public Vector2 SpawnPosition;
 
@@ -39,7 +43,8 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(Sun());
         StartCoroutine(Rage());
         StartCoroutine(Heal());
-
+        scaleChara = chara.transform.localScale.x;
+        scaleCharaMemory = scaleChara;
     }
     // Update is called once per frame
     void Update()
@@ -115,6 +120,17 @@ public class PlayerController : MonoBehaviour
         if (Input.GetAxis("Horizontal") < -0.1 || Input.GetAxis("Horizontal") > 0.1)
         {
             player.lastAxis = Input.GetAxis("Horizontal");
+            if (Input.GetAxis("Horizontal") < -0.1)
+            {
+                scaleChara = -scaleCharaMemory;
+            }
+
+            if (Input.GetAxis("Horizontal") > 0.1)
+            {
+                scaleChara = scaleCharaMemory;
+            }
+
+            chara.transform.localScale = new Vector2(scaleChara, chara.transform.localScale.y);
         }
         StartCoroutine(rememberAxis());
     }

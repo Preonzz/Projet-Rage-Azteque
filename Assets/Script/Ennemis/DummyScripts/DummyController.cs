@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,12 +21,19 @@ public class DummyController : MonoBehaviour
 
     //enemy dans le soleil
     bool enemyInSun = false;
-    
+
+    //graphic
+    public GameObject charaMelee;
+    float scaleCharaMelee;
+    float scaleCharaMemoryMelee;
+
     void Start()
     {
         StartCoroutine(SunPulse());
         StartCoroutine(EnemyAttack());
         StartCoroutine (InFreeze());
+        scaleCharaMelee = charaMelee.transform.localScale.x;
+        scaleCharaMemoryMelee = scaleCharaMelee;
     }
     void FixedUpdate()
     {
@@ -44,13 +52,16 @@ public class DummyController : MonoBehaviour
             {
                 Debug.Log("Droite");
                 enemyBody.velocity = new Vector2(enemySpeed, enemyBody.velocity.y);
+                scaleCharaMelee = -scaleCharaMemoryMelee;
             }
             //déplacement à gauche
             if (XEnemyPosition > player.transform.position.x && XEnemyPosition - player.transform.position.x > enemyAttackRange)
             {
                 Debug.Log("Gauche");
                 enemyBody.velocity = new Vector2(-enemySpeed, enemyBody.velocity.y);
+                scaleCharaMelee = scaleCharaMemoryMelee;
             }
+            charaMelee.transform.localScale = new Vector2(scaleCharaMelee, charaMelee.transform.localScale.y);
         }
 
 
