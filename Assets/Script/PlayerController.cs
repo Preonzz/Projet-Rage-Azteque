@@ -11,8 +11,8 @@ public class PlayerController : MonoBehaviour
     public float speedX;
     float rememberSpeedX;
     public float speedY;
-    float TimerSaut;
-    public float TempsSaut = 0.1f;
+    int TimerSaut;
+    public int TempsSaut = 20;
     bool jumping = false;
 
     public Vector2 SpawnPosition;
@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
     bool inAttack = false;
     bool inAttack2 = false;
     bool stopAttack = false;
-    float startJump = 0;
 
     GameObject SunRay;
     void Start()
@@ -45,15 +44,14 @@ public class PlayerController : MonoBehaviour
             body.velocity = Vector2.up * player.jumpForce;
             jumping = true;
             TimerSaut = TempsSaut;
-            startJump = 0;
         }
 
         if (jumping == true && Input.GetButton("Jump") && stopAttack == false)
         {
-            if (TimerSaut > 0 && startJump > 0.1f)
+            if (TimerSaut > 0)
             {
                 body.velocity = Vector2.up * player.jumpForce * 2;
-                startJump = 0;
+                TimerSaut -= 1;
             }
         }
 
@@ -80,14 +78,6 @@ public class PlayerController : MonoBehaviour
         {
             speedOnAir();
         }
-
-        if (TimerSaut > 0)
-        {
-            TimerSaut -= Time.fixedDeltaTime;
-            startJump += Time.fixedDeltaTime;
-        }
-
-
     }
 
     // Deplacements 
