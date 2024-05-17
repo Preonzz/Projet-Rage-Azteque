@@ -45,13 +45,15 @@ public class PlayerController : MonoBehaviour
             body.velocity = Vector2.up * player.jumpForce;
             jumping = true;
             TimerSaut = TempsSaut;
+            startJump = 0;
         }
 
         if (jumping == true && Input.GetButton("Jump") && stopAttack == false)
         {
-            if (TimerSaut > 0)
+            if (TimerSaut > 0 && startJump > 0.1f)
             {
                 body.velocity = Vector2.up * player.jumpForce * 2;
+                startJump = 0;
             }
         }
 
@@ -82,6 +84,7 @@ public class PlayerController : MonoBehaviour
         if (TimerSaut > 0)
         {
             TimerSaut -= Time.fixedDeltaTime;
+            startJump += Time.fixedDeltaTime;
         }
 
 
