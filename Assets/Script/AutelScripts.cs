@@ -17,6 +17,7 @@ public class AutelScripts : MonoBehaviour
         if (other.gameObject.tag == "Player" && Active == true)
         {
             Active = false;
+            GameManager.Instance.autelManager.Autel(); 
         }
     }
 }
