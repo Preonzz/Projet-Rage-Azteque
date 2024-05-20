@@ -384,6 +384,7 @@ MonoBehaviour:
   speedX: 10
   speedY: 0
   TempsSaut: 100
+  chara: {fileID: 0}
   SpawnPosition: {x: 0, y: 0}
 --- !u!114 &151864780043191572
 MonoBehaviour:
@@ -419,9 +420,9 @@ MonoBehaviour:
   attaqueForte: {fileID: 6503379717981031647, guid: 127b4ae36b5fd5a4c9e5693b98639365, type: 3}
   lastAxis: 1
   attackSpeed: 1
-  unlockSun: 1
-  unlockRage: 1
-  unlockHeal: 1
+  unlockSun: 0
+  unlockRage: 0
+  unlockHeal: 0
   sunDmg: 4
   enraged: 0
   healQuantity: 20

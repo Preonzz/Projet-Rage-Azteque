@@ -747,6 +747,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1013ce7c5a10d4c4a96b0a5e711b660d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PowerChoiceMenu: {fileID: 8278307959288197921}
+  SunBeamButton: {fileID: 8258347271343954694}
+  RageButton: {fileID: 8577049631403568632}
+  HealButton: {fileID: 3764514337267364897}
 --- !u!1 &6833399909560128462
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,7 +1170,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2599687818298757451
 RectTransform:
   m_ObjectHideFlags: 0
