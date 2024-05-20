@@ -149,10 +149,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void move()
-    {
 
-    }
     // Attaque 
 
     IEnumerator lightAttack()
@@ -210,9 +207,10 @@ public class PlayerController : MonoBehaviour
         Destroy(bigAttack);
         speedOnAir();
         stopAttack = false;
+        inAttack2 = false;
         yield return new WaitForSecondsRealtime(1f / player.attackSpeed);
 
-        inAttack2 = false;
+        
         yield return null;
         StartCoroutine(HeavyAttack());
     }
