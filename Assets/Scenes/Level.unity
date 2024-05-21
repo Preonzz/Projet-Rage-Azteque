@@ -3412,6 +3412,18 @@ PrefabInstance:
       propertyPath: m_FOVAxisMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2720583462277944142, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.59213734
+      objectReference: {fileID: 0}
+    - target: {fileID: 2720583462277944142, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.59213734
+      objectReference: {fileID: 0}
+    - target: {fileID: 2720583462277944142, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.59213734
+      objectReference: {fileID: 0}
     - target: {fileID: 3809495722565081956, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: m_RootOrder
       value: 5
