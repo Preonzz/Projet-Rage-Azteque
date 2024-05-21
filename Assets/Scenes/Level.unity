@@ -1413,6 +1413,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5992803786195521313, guid: 7e489ada7d32a12469a29a40ab4c6d5a, type: 3}
+      propertyPath: Active
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6394523661757003220, guid: 7e489ada7d32a12469a29a40ab4c6d5a, type: 3}
       propertyPath: m_Name
       value: Autel (2)
@@ -3403,6 +3407,14 @@ PrefabInstance:
     - target: {fileID: 151864780043191572, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: jumpForce
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 151864780043191572, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+      propertyPath: unlockHeal
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 151864780043191572, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
+      propertyPath: unlockRage
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2000448648233017120, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: orthographic
@@ -6004,6 +6016,10 @@ PrefabInstance:
     - target: {fileID: 6498245051783611625, guid: b9d8a3106881e2e47bdd67de8c861a9e, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8278307959288197921, guid: b9d8a3106881e2e47bdd67de8c861a9e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
