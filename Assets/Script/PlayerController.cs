@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public int TempsSaut = 20;
     bool jumping = false;
 
+
     //pause
     Vector2 fallPause;
     bool pauseMemory = false;
@@ -23,7 +24,6 @@ public class PlayerController : MonoBehaviour
     public GameObject chara;
     float scaleChara;
     float scaleCharaMemory;
-
     public Vector2 SpawnPosition;
 
     GameObject smallAttack;
@@ -166,7 +166,7 @@ public class PlayerController : MonoBehaviour
             SpawnPosition = new Vector2(transform.position.x-0.8f, transform.position.y);
             smallAttack = Instantiate(player.attaqueFaible, SpawnPosition, Quaternion.identity);
         }
-
+        GameManager.Instance.player.animator.Play("Base Layer.LightAttack");
         inAttack = true;
         stopAttack = true;
         speedX = 1;
@@ -203,6 +203,7 @@ public class PlayerController : MonoBehaviour
         inAttack2 = true;
         stopAttack = true;
         speedX = 1;
+        GameManager.Instance.player.animator.Play("Base Layer.HeavyAttack");
         yield return new WaitForSecondsRealtime(0.2f);
         Destroy(bigAttack);
         speedOnAir();

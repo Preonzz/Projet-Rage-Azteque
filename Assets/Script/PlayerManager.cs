@@ -33,6 +33,10 @@ public class PlayerManager : MonoBehaviour
     float XPlayerPosition;
     public bool mort = false;
 
+    //animation
+    public Animator animator;
+    public bool EnSaut = false;
+
     // Attack
     public GameObject attaqueFaible;
     public GameObject attaqueForte;

@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 999
-  m_Sprite: {fileID: 21300000, guid: 1c1758082293ed245a328adfe77277af, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ab90a623ec3b0ea42994549acf891f6e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -133,7 +133,7 @@ Camera:
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
-  m_FOVAxisMode: 0
+  m_FOVAxisMode: 1
   m_Iso: 200
   m_ShutterSpeed: 0.005
   m_Aperture: 16
@@ -252,7 +252,7 @@ Transform:
   - {fileID: 6774591816825449881}
   - {fileID: 438036540846326706}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1802743384104618119
 SpriteRenderer:
@@ -383,8 +383,8 @@ MonoBehaviour:
   body: {fileID: 9100436455386613256}
   speedX: 10
   speedY: 0
-  TempsSaut: 100
-  chara: {fileID: 0}
+  TempsSaut: 15
+  chara: {fileID: 6936804555629043086}
   SpawnPosition: {x: 0, y: 0}
 --- !u!114 &151864780043191572
 MonoBehaviour:
@@ -412,9 +412,9 @@ MonoBehaviour:
   particule: {fileID: 1411324763292477641}
   enragedParticle: {fileID: 5886765567837785325}
   pause: 0
-  fallSpeed: -10
+  fallSpeed: -5
   moveSpeed: 15
-  jumpForce: 5
+  jumpForce: 8
   mort: 0
   attaqueFaible: {fileID: 5478998340817212012, guid: eac20cf9ec315904dbdfcd71cf7a9143, type: 3}
   attaqueForte: {fileID: 6503379717981031647, guid: 127b4ae36b5fd5a4c9e5693b98639365, type: 3}
@@ -5377,7 +5377,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5456449291334073929}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.9787, y: -0.021172537, z: 0.206}
+  m_LocalPosition: {x: 0.9787, y: -0.021172537, z: -0.31}
   m_LocalScale: {x: 1.9204009, y: 0.32488358, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5537,6 +5537,7 @@ GameObject:
   - component: {fileID: 2720583462277944142}
   - component: {fileID: 7039414827906473768}
   - component: {fileID: 1563305786620933399}
+  - component: {fileID: 812761521136959757}
   m_Layer: 0
   m_Name: Chara
   m_TagString: Untagged
@@ -5553,7 +5554,7 @@ Transform:
   m_GameObject: {fileID: 6936804555629043086}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.043, y: 0.408, z: 0}
-  m_LocalScale: {x: 0.5311125, y: 0.5311125, z: 0.5311125}
+  m_LocalScale: {x: 0.59213734, y: 0.59213734, z: 0.59213734}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3809495722565081956}
@@ -5632,6 +5633,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &812761521136959757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6936804555629043086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d065b0f6df841154b85247db0fd95873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7138944197578234577
 GameObject:
   m_ObjectHideFlags: 0
@@ -10486,7 +10499,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7781578135543146114}
   m_LocalRotation: {x: -0, y: -0, z: -0.53808814, w: 0.8428886}
-  m_LocalPosition: {x: 2.0355933, y: 0.056100365, z: 0.15900135}
+  m_LocalPosition: {x: 2.0355933, y: 0.056100365, z: -0.31}
   m_LocalScale: {x: 0.528348, y: 0.6494742, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10570,7 +10583,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8534336042672442941}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5370014, y: 0.009427768, z: 1.1307267}
+  m_LocalPosition: {x: 1.5370014, y: 0.009427768, z: -0.31}
   m_LocalScale: {x: 3.0486364, y: 0.26798764, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
