@@ -246,6 +246,7 @@ public class PlayerController : MonoBehaviour
         inAttack2 = true;
         stopAttack = true;
         speedX = 0;
+        GameManager.Instance.player.animator.Play("Base Layer.SunAttack");
         yield return new WaitForSecondsRealtime(1.5f);
         Destroy(SunRay);
         speedOnAir();
