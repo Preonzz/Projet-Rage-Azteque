@@ -11,8 +11,10 @@ public class PowerChoiceScript : MonoBehaviour
     public GameObject SunBeamButton; 
     public GameObject RageButton;
     public GameObject HealButton;
+    public bool isPaused = false;
     public void Autel()
     {
+        isPaused = true;
         Time.timeScale = 0f;
         PowerChoiceMenu.SetActive(true);
 
@@ -22,7 +24,6 @@ public class PowerChoiceScript : MonoBehaviour
 
         if (GameManager.Instance.player.unlockSun == false)
         {
-            Debug.Log("Sun not unlocked");
             SunBeamButton.SetActive(true);
         }
         if (GameManager.Instance.player.unlockHeal == false)
@@ -56,7 +57,7 @@ public class PowerChoiceScript : MonoBehaviour
 
     public void CloseAutelMenu()
     {
-
+        isPaused = false;
         SunBeamButton.SetActive(false);
         HealButton.SetActive(false);
         RageButton.SetActive(false);

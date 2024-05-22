@@ -11,14 +11,17 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetButtonDown("PauseButton"))
         {
-            if (GameManager.Instance.player.pause == true)
+            if (GameManager.Instance.autelManager.isPaused == false)
             {
-                ResumeGame();
-            }
+                if (GameManager.Instance.player.pause == true)
+                {
+                    ResumeGame();
+                }
 
-            else
-            {
-                PauseGame();
+                else
+                {
+                    PauseGame();
+                }
             }
         }
     }
@@ -30,11 +33,13 @@ public class PauseMenu : MonoBehaviour
         GameManager.Instance.player.pause = false;
     }
 
-    void PauseGame ()
+    void PauseGame()
     {
-        PauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
-        GameManager.Instance.player.pause = true;
+        
+            PauseMenuUI.SetActive(true);
+            Time.timeScale = 0f;
+            GameManager.Instance.player.pause = true;
+
     }
 
     public void BackToTheMainMenuButton()
