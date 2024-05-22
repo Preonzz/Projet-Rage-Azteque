@@ -69,6 +69,14 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (Input.GetAxis("Horizontal") == 0)
+        {
+            GameManager.Instance.player.animator.SetBool("EnMarche", false);
+        }
+        else
+        {
+            GameManager.Instance.player.animator.SetBool("EnMarche", true);
+        }
     }
 
     private void FixedUpdate()
@@ -129,6 +137,7 @@ public class PlayerController : MonoBehaviour
             {
                 scaleChara = scaleCharaMemory;
             }
+
 
             chara.transform.localScale = new Vector2(scaleChara, chara.transform.localScale.y);
         }

@@ -50,14 +50,12 @@ public class DummyController : MonoBehaviour
         {
             if (XEnemyPosition < player.transform.position.x && player.transform.position.x - XEnemyPosition > enemyAttackRange)
             {
-                Debug.Log("Droite");
                 enemyBody.velocity = new Vector2(enemySpeed, enemyBody.velocity.y);
                 scaleCharaMelee = -scaleCharaMemoryMelee;
             }
             //déplacement à gauche
             if (XEnemyPosition > player.transform.position.x && XEnemyPosition - player.transform.position.x > enemyAttackRange)
             {
-                Debug.Log("Gauche");
                 enemyBody.velocity = new Vector2(-enemySpeed, enemyBody.velocity.y);
                 scaleCharaMelee = scaleCharaMemoryMelee;
             }
@@ -76,7 +74,6 @@ public class DummyController : MonoBehaviour
             freezeTime += 2;
             StartCoroutine(GameManager.Instance.camera.ShakeCamera(UnityEngine.Random.Range(0.5f, 0.7f), 0.1f));
             GameManager.Instance.player.currentRage += 2;
-            Debug.Log(HP);
             if (GameManager.Instance.player.lastAxis >= 0.1f)
             {
                 enemyBody.velocity = new Vector2(2, 1);
@@ -96,7 +93,6 @@ public class DummyController : MonoBehaviour
             StartCoroutine(GameManager.Instance.camera.ShakeCamera(UnityEngine.Random.Range(1.2f, 1.5f), 0.2f));
             GameManager.Instance.player.currentRage += 4;
 
-            Debug.Log(HP);
             if (GameManager.Instance.player.lastAxis >= 0.1f)
             {
                 enemyBody.velocity = new Vector2(5, 1);
@@ -110,7 +106,6 @@ public class DummyController : MonoBehaviour
         if (other.gameObject.tag == ("Sun Beam"))
         {
             enemyInSun = true;
-            Debug.Log("true");
         }
         if (GameManager.Instance.player.currentRage > GameManager.Instance.player.maxRage)
         {
@@ -125,7 +120,6 @@ public class DummyController : MonoBehaviour
         if (other.gameObject.tag == ("Sun Beam"))
         {
             enemyInSun = false;
-            Debug.Log("false");
             if (GameManager.Instance.player.currentRage > GameManager.Instance.player.maxRage)
             {
                 GameManager.Instance.player.currentRage = GameManager.Instance.player.maxRage;
@@ -155,7 +149,6 @@ public class DummyController : MonoBehaviour
     IEnumerator EnemyAttack()
     {
         yield return new WaitUntil(() => player.transform.position.x - XEnemyPosition < enemyAttackRange && player.transform.position.x - XEnemyPosition > -enemyAttackRange && isFreeze == false);
-        Debug.Log("attack ennemie");
         yield return new WaitForSeconds(0.5f);
 
         if (isFreeze == false)

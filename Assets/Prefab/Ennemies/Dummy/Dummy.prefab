@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3177812719280458583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.202, y: -0.093, z: 0}
+  m_LocalPosition: {x: -0.31, y: -0.12, z: 0}
   m_LocalScale: {x: 0.5008246, y: 0.35253042, z: 0.5008246}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a8d151c4d9b7641a45e1947787d274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
+  HP: 75
   enemyBody: {fileID: 868762539282107410}
   player: {fileID: 0}
   enemyAttackRange: 1.7
