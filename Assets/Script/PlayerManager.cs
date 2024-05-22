@@ -87,6 +87,13 @@ public class PlayerManager : MonoBehaviour
         yield return null;
         StartCoroutine(LifeCursor());
     }
+
+    IEnumerator Mort()
+    {
+        GameManager.Instance.player.animator.Play("Base Layer.CharaDeath");
+        yield return new WaitForSecondsRealtime(1f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("LoseMenu");
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == ("EnemySmash"))
@@ -102,7 +109,7 @@ public class PlayerManager : MonoBehaviour
 
         if (collision == particule)
         {
-            Health -= 10;
+            Health -= 5;
             currentRage += 2;
             if (currentRage > maxRage)
             {
@@ -111,10 +118,15 @@ public class PlayerManager : MonoBehaviour
 
         }
 
+        if (collision.gameObject.tag == ("Victory"))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("VictoryMenu");
+        }
 
         if (Health <= 0)
         {
             mort = true;
+            StartCoroutine(Mort());
         }
 
 

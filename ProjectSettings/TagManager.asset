@@ -10,6 +10,7 @@ TagManager:
   - Heavy Attack
   - Sun Beam
   - EnemySmash
+  - Victory
   layers:
   - Default
   - TransparentFX

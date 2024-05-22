@@ -26,11 +26,13 @@ public class PlayerController : MonoBehaviour
     float scaleCharaMemory;
     public Vector2 SpawnPosition;
 
+    //attack
     GameObject smallAttack;
     GameObject bigAttack;
     bool inAttack = false;
     bool inAttack2 = false;
     bool stopAttack = false;
+    bool inSunAttack = false;
 
     GameObject SunRay;
     void Start()
@@ -124,19 +126,23 @@ public class PlayerController : MonoBehaviour
     IEnumerator rememberAxis()
     {
         
-        yield return new WaitUntil(() => Input.GetAxis("Horizontal") < -0.1 || Input.GetAxis("Horizontal") > 0.1 && player.pause == false);
+        yield return new WaitUntil(() => Input.GetAxis("Horizontal") < -0.1 || Input.GetAxis("Horizontal") > 0.1 && player.pause == false && inSunAttack == false);
         if (Input.GetAxis("Horizontal") < -0.1 || Input.GetAxis("Horizontal") > 0.1)
         {
             player.lastAxis = Input.GetAxis("Horizontal");
-            if (Input.GetAxis("Horizontal") < -0.1)
+            if (inSunAttack == false)
             {
-                scaleChara = -scaleCharaMemory;
+                if (Input.GetAxis("Horizontal") < -0.1)
+                {
+                    scaleChara = -scaleCharaMemory;
+                }
+
+                if (Input.GetAxis("Horizontal") > 0.1)
+                {
+                    scaleChara = scaleCharaMemory;
+                }
             }
 
-            if (Input.GetAxis("Horizontal") > 0.1)
-            {
-                scaleChara = scaleCharaMemory;
-            }
 
 
             chara.transform.localScale = new Vector2(scaleChara, chara.transform.localScale.y);
@@ -177,7 +183,6 @@ public class PlayerController : MonoBehaviour
         }
         GameManager.Instance.player.animator.Play("Base Layer.LightAttack");
         inAttack = true;
-        stopAttack = true;
         speedX = 1;
         yield return new WaitForSecondsRealtime(0.2f);
         Destroy(smallAttack);
@@ -210,7 +215,6 @@ public class PlayerController : MonoBehaviour
             bigAttack = Instantiate(player.attaqueForte, SpawnPosition, Quaternion.identity);
         }
         inAttack2 = true;
-        stopAttack = true;
         speedX = 1;
         GameManager.Instance.player.animator.Play("Base Layer.HeavyAttack");
         yield return new WaitForSecondsRealtime(0.2f);
@@ -245,12 +249,14 @@ public class PlayerController : MonoBehaviour
         inAttack = true;
         inAttack2 = true;
         stopAttack = true;
+        inSunAttack = true;
         speedX = 0;
         GameManager.Instance.player.animator.Play("Base Layer.SunAttack");
         yield return new WaitForSecondsRealtime(1.5f);
         Destroy(SunRay);
         speedOnAir();
         stopAttack = false;
+        inSunAttack = false;
         yield return new WaitForSecondsRealtime(1.5f / player.attackSpeed);
 
         inAttack = false;

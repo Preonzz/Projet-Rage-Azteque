@@ -188,7 +188,7 @@ AnimatorStateMachine:
     m_Position: {x: 460, y: 50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7689925335627323033}
-    m_Position: {x: 820, y: -250, z: 0}
+    m_Position: {x: 760, y: 50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1644052871385353278}
     m_Position: {x: 260, y: 260, z: 0}
@@ -415,7 +415,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CDeath
+  m_Name: CharaDeath
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []

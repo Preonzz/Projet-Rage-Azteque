@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1632870068659720001}
   - component: {fileID: 8426570478593943630}
+  - component: {fileID: 855395730663737153}
   m_Layer: 0
   m_Name: Chara
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3177812719280458583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.31, y: -0.12, z: 0}
+  m_LocalPosition: {x: -0.31, y: 0.058, z: 0}
   m_LocalScale: {x: 0.5008246, y: 0.35253042, z: 0.5008246}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -84,6 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &855395730663737153
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3177812719280458583}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 031d155b82cb81747855ed87046749f6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4674563811553923402
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,7 +136,7 @@ Transform:
   m_GameObject: {fileID: 4674563811553923402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.63866, y: 0.6419873, z: 0}
-  m_LocalScale: {x: 0.78269, y: 1.3612, z: 1.3612}
+  m_LocalScale: {x: 0.8678537, y: 1.5093107, z: 1.5093107}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1632870068659720001}
@@ -257,7 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a8d151c4d9b7641a45e1947787d274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 75
+  HP: 65
   enemyBody: {fileID: 868762539282107410}
   player: {fileID: 0}
   enemyAttackRange: 1.7
@@ -311,7 +333,7 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -0.013986908, y: 0.5895698}
-      - {x: -0.5062309, y: 0.37778372}
-      - {x: 0.5062309, y: 0.37778366}
+      - {x: -0.49586618, y: 0.3821524}
+      - {x: 0.49537387, y: 0.3817227}
       - {x: 0.48753822, y: 0.38176793}
   m_UseDelaunayMesh: 0
