@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour
             body.velocity = Vector2.up * player.jumpForce;
             jumping = true;
             TimerSaut = TempsSaut;
+            player.OnTheFloor = false;
         }
         if (player.mort == false)
         {

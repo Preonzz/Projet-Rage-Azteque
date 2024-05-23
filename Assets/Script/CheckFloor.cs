@@ -21,9 +21,16 @@ public class CheckFloor : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Floor" && GameManager.Instance.player.OnTheFloor == true)
-        { 
-            GameManager.Instance.player.OnTheFloor = false;
-            GameManager.Instance.player.animator.SetBool("EnSaut", true);
+        {
+            StartCoroutine(JumpDelay());
         }
+    }
+
+    IEnumerator JumpDelay()
+    {
+        yield return new WaitForSeconds(0.2f);
+        GameManager.Instance.player.animator.SetBool("EnSaut", true);
+        GameManager.Instance.player.OnTheFloor = false;
+        yield return null;
     }
 }
