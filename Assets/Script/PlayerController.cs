@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour
             jumping = true;
             TimerSaut = TempsSaut;
             player.OnTheFloor = false;
+            GameManager.Instance.player.animator.SetBool("EnSaut", true);
         }
         if (player.mort == false)
         {
