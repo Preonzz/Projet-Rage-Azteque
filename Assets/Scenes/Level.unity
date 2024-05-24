@@ -751,10 +751,6 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5303435577672376535, guid: 1912c81453733f04285387e767a3ce61, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.21142636
-      objectReference: {fileID: 0}
-    - target: {fileID: 5303435577672376535, guid: 1912c81453733f04285387e767a3ce61, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.551907
       objectReference: {fileID: 0}
@@ -793,22 +789,6 @@ PrefabInstance:
     - target: {fileID: 5303435577672376535, guid: 1912c81453733f04285387e767a3ce61, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212073005129315824, guid: 1912c81453733f04285387e767a3ce61, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212073005129315824, guid: 1912c81453733f04285387e767a3ce61, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212073005129315824, guid: 1912c81453733f04285387e767a3ce61, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6212073005129315824, guid: 1912c81453733f04285387e767a3ce61, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4684,19 +4664,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6796773608651640428, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: m_Size.x
-      value: 1.6844554
+      value: 1.662735
       objectReference: {fileID: 0}
     - target: {fileID: 6796773608651640428, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: m_Size.y
-      value: 0.32371086
+      value: 0.855831
       objectReference: {fileID: 0}
     - target: {fileID: 6796773608651640428, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: m_Offset.x
-      value: 0.016681314
+      value: 0.005821109
       objectReference: {fileID: 0}
     - target: {fileID: 6796773608651640428, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: m_Offset.y
-      value: -0.012715258
+      value: 0.027842402
       objectReference: {fileID: 0}
     - target: {fileID: 7039414827906473768, guid: 481f6334fae446144b5f1419c1db0180, type: 3}
       propertyPath: m_Sprite
