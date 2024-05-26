@@ -287,6 +287,7 @@ MonoBehaviour:
   SpawnPosition: {x: 0, y: 0}
   enemyAttack: {fileID: 6537886629248021128, guid: f1ed270dce23da74198150568705b28e, type: 3}
   meleeVision: 10
+  animEnemy: {fileID: 855395730663737153}
   charaMelee: {fileID: 3177812719280458583}
 --- !u!60 &6169364827193343819
 PolygonCollider2D:

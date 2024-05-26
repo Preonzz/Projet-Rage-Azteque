@@ -18,6 +18,8 @@ public class DummyController : MonoBehaviour
     int freezeTime = 0;
     bool isFreeze = false;
     public float meleeVision = 10;
+    public Animator animEnemy;
+    bool dead = false;
 
     //enemy dans le soleil
     bool enemyInSun = false;
@@ -39,7 +41,8 @@ public class DummyController : MonoBehaviour
     {
         if (HP <= 0)
         {
-            Destroy(gameObject);
+            freezeTime = 5;
+            StartCoroutine(Death());
             GameManager.Instance.player.enemyKilled += 1;
             GameManager.Instance.camera.isCameraShaking = false;
         }
@@ -67,7 +70,7 @@ public class DummyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == ("Light Attack"))
+        if (other.gameObject.tag == ("Light Attack") && dead == false)
         {
             HP -= 10;
             isFreeze = true;
@@ -85,7 +88,7 @@ public class DummyController : MonoBehaviour
         }
             
 
-        if (other.gameObject.tag == ("Heavy Attack"))
+        if (other.gameObject.tag == ("Heavy Attack") && dead == false)
         {
             HP -= 25;
             isFreeze = true;
@@ -103,7 +106,7 @@ public class DummyController : MonoBehaviour
             }
 
         }
-        if (other.gameObject.tag == ("Sun Beam"))
+        if (other.gameObject.tag == ("Sun Beam") && dead == false)
         {
             enemyInSun = true;
         }
@@ -117,7 +120,7 @@ public class DummyController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == ("Sun Beam"))
+        if (other.gameObject.tag == ("Sun Beam") && dead == false)
         {
             enemyInSun = false;
             if (GameManager.Instance.player.currentRage > GameManager.Instance.player.maxRage)
@@ -148,7 +151,7 @@ public class DummyController : MonoBehaviour
     }
     IEnumerator EnemyAttack()
     {
-        yield return new WaitUntil(() => player.transform.position.x - XEnemyPosition < enemyAttackRange && player.transform.position.x - XEnemyPosition > -enemyAttackRange && isFreeze == false);
+        yield return new WaitUntil(() => player.transform.position.x - XEnemyPosition < enemyAttackRange && player.transform.position.x - XEnemyPosition > -enemyAttackRange && isFreeze == false && dead == false);
         yield return new WaitForSeconds(0.5f);
 
         if (isFreeze == false)
@@ -164,6 +167,7 @@ public class DummyController : MonoBehaviour
                 SpawnPosition = new Vector2(transform.position.x - 0.8f, transform.position.y);
                 Attack = Instantiate(enemyAttack, SpawnPosition, Quaternion.identity);
             }
+            animEnemy.Play("Base Layer.EnemyAttack");
         }
         
         yield return new WaitForSecondsRealtime(0.02f);
@@ -188,6 +192,14 @@ public class DummyController : MonoBehaviour
         }
 
         StartCoroutine(InFreeze());
+    }
+
+    IEnumerator Death()
+    {
+        dead = true;
+        animEnemy.Play("Base Layer.DeathEnemy");
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
     }
 
 

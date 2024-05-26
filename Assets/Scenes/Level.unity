@@ -10706,7 +10706,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655902514}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -140.9632, y: -21.80285, z: 0.11060721}
+  m_LocalPosition: {x: -139.59, y: -21.80285, z: 0.11060721}
   m_LocalScale: {x: 2.0169473, y: 0.40371093, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13493,6 +13493,14 @@ PrefabInstance:
     - target: {fileID: 7272710179861762444, guid: d95dc0a6b430d7a4d9401f4a1ccaefce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8426570478593943630, guid: d95dc0a6b430d7a4d9401f4a1ccaefce, type: 3}
+      propertyPath: m_Size.x
+      value: 3.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 8426570478593943630, guid: d95dc0a6b430d7a4d9401f4a1ccaefce, type: 3}
+      propertyPath: m_Size.y
+      value: 7.21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
