@@ -16,6 +16,15 @@ public class SniperController : MonoBehaviour
     public Vector2 SpawnPosition;
     int freezeTime = 0;
     bool isFreeze = false;
+    float XEnemyPosition;
+
+    public Animator animEnemy;
+    bool dead = false;
+
+    //graphic
+    public GameObject charaMelee;
+    float scaleCharaMelee;
+    float scaleCharaMemoryMelee;
 
     //enemy dans le soleil
     bool enemyInSun = false;
@@ -24,6 +33,8 @@ public class SniperController : MonoBehaviour
     {
         StartCoroutine(Aim());
         StartCoroutine(SunPulse());
+        scaleCharaMelee = charaMelee.transform.localScale.x;
+        scaleCharaMemoryMelee = scaleCharaMelee;
     }
 
     // Update is called once per frame
@@ -31,10 +42,26 @@ public class SniperController : MonoBehaviour
     {
         if (HP <= 0)
         {
-            Destroy(gameObject);
+            dead = true;
+            Destroy(sniper);
+            freezeTime = 5;
+            StartCoroutine(Death());
             GameManager.Instance.player.enemyKilled += 1;
             GameManager.Instance.camera.isCameraShaking = false;
         }
+
+
+            if (XEnemyPosition < player.transform.position.x && player.transform.position.x - XEnemyPosition > enemyAttackRange)
+            {
+                scaleCharaMelee = -scaleCharaMemoryMelee;
+            }
+            //déplacement à gauche
+            if (XEnemyPosition > player.transform.position.x && XEnemyPosition - player.transform.position.x > enemyAttackRange)
+            {
+                scaleCharaMelee = scaleCharaMemoryMelee;
+            }
+            charaMelee.transform.localScale = new Vector2(scaleCharaMelee, charaMelee.transform.localScale.y);
+        XEnemyPosition = transform.position.x;
     }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -146,5 +173,13 @@ public class SniperController : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.1f);
 
         StartCoroutine(Aim());
+    }
+
+    IEnumerator Death()
+    {
+        dead = true;
+        animEnemy.Play("Base Layer.death");
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
     }
 }
