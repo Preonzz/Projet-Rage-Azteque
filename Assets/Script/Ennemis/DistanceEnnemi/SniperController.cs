@@ -25,6 +25,7 @@ public class SniperController : MonoBehaviour
     public GameObject charaMelee;
     float scaleCharaMelee;
     float scaleCharaMemoryMelee;
+    public ParticleSystem blood;
 
     //enemy dans le soleil
     bool enemyInSun = false;
@@ -35,6 +36,7 @@ public class SniperController : MonoBehaviour
         StartCoroutine(SunPulse());
         scaleCharaMelee = charaMelee.transform.localScale.x;
         scaleCharaMemoryMelee = scaleCharaMelee;
+        blood.Stop();
     }
 
     // Update is called once per frame
@@ -80,6 +82,7 @@ public class SniperController : MonoBehaviour
             {
                 enemyBody.velocity = new Vector2(-2, 1);
             }
+            StartCoroutine(Blood());
         }
 
 
@@ -99,7 +102,7 @@ public class SniperController : MonoBehaviour
             {
                 enemyBody.velocity = new Vector2(-5, 1);
             }
-
+            StartCoroutine(Blood());
         }
         if (other.gameObject.tag == ("Sun Beam"))
         {
@@ -177,5 +180,12 @@ public class SniperController : MonoBehaviour
         yield return new WaitForSeconds(1);
         GameManager.Instance.player.enemyKilled += 1;
         Destroy(gameObject);
+    }
+
+    IEnumerator Blood()
+    {
+        blood.Play();
+        yield return new WaitForSeconds(0.5f);
+        blood.Stop();
     }
 }

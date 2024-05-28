@@ -28,6 +28,7 @@ public class DummyController : MonoBehaviour
     public GameObject charaMelee;
     float scaleCharaMelee;
     float scaleCharaMemoryMelee;
+    public ParticleSystem blood;
 
     void Start()
     {
@@ -36,6 +37,7 @@ public class DummyController : MonoBehaviour
         StartCoroutine (InFreeze());
         scaleCharaMelee = charaMelee.transform.localScale.x;
         scaleCharaMemoryMelee = scaleCharaMelee;
+        blood.Stop();
     }
     void FixedUpdate()
     {
@@ -85,6 +87,7 @@ public class DummyController : MonoBehaviour
             {
                 enemyBody.velocity = new Vector2(-2, 1);
             }
+            StartCoroutine(Blood());
         }
             
 
@@ -104,7 +107,7 @@ public class DummyController : MonoBehaviour
             {
                 enemyBody.velocity = new Vector2(-5, 1);
             }
-
+            StartCoroutine(Blood());
         }
         if (other.gameObject.tag == ("Sun Beam") && dead == false)
         {
@@ -203,6 +206,11 @@ public class DummyController : MonoBehaviour
         Destroy(gameObject);
     }
 
-
+    IEnumerator Blood()
+    {
+        blood.Play();
+        yield return new WaitForSeconds(0.5f);
+        blood.Stop();
+    }
 }
 
