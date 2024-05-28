@@ -46,7 +46,6 @@ public class SniperController : MonoBehaviour
             Destroy(sniper);
             freezeTime = 5;
             StartCoroutine(Death());
-            GameManager.Instance.player.enemyKilled += 1;
             GameManager.Instance.camera.isCameraShaking = false;
         }
 
@@ -180,6 +179,7 @@ public class SniperController : MonoBehaviour
         dead = true;
         animEnemy.Play("Base Layer.death");
         yield return new WaitForSeconds(1);
+        GameManager.Instance.player.enemyKilled += 1;
         Destroy(gameObject);
     }
 }

@@ -43,7 +43,7 @@ public class DummyController : MonoBehaviour
         {
             freezeTime = 5;
             StartCoroutine(Death());
-            GameManager.Instance.player.enemyKilled += 1;
+
             GameManager.Instance.camera.isCameraShaking = false;
         }
         XEnemyPosition = transform.position.x;
@@ -199,6 +199,7 @@ public class DummyController : MonoBehaviour
         dead = true;
         animEnemy.Play("Base Layer.DeathEnemy");
         yield return new WaitForSeconds(1);
+        GameManager.Instance.player.enemyKilled += 1;
         Destroy(gameObject);
     }
 
