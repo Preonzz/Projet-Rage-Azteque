@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{dcc989c1-dd0b-407e-97cd-1ea02fce7205}">
+		<property name="assetPath">
+			<value>wood-crack-1-105890.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.704</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f2ff283a-9cf8-4220-91f8-5bed6091b13e}</destination>
+		</relationship>
+	</object>
+</objects>
