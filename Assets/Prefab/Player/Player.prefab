@@ -83,7 +83,7 @@ SpriteRenderer:
   m_Size: {x: 20, y: 20}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2508733443207203360
@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 438036540846326706}
   - component: {fileID: 2000448648233017120}
   - component: {fileID: 8816359341049976886}
+  - component: {fileID: 4502242148521820923}
   m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -179,6 +180,37 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2508733443207203360}
   m_Enabled: 1
+--- !u!114 &4502242148521820923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2508733443207203360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -632502863
+      Data2: 1267528521
+      Data3: 834657450
+      Data4: -275460491
+    Path: event:/Musique
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &3227328795998007277
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +284,7 @@ Transform:
   - {fileID: 6774591816825449881}
   - {fileID: 438036540846326706}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1802743384104618119
 SpriteRenderer:
@@ -416,6 +448,8 @@ MonoBehaviour:
   moveSpeed: 15
   jumpForce: 8
   mort: 0
+  animator: {fileID: 0}
+  EnSaut: 0
   attaqueFaible: {fileID: 5478998340817212012, guid: eac20cf9ec315904dbdfcd71cf7a9143, type: 3}
   attaqueForte: {fileID: 6503379717981031647, guid: 127b4ae36b5fd5a4c9e5693b98639365, type: 3}
   lastAxis: 1
@@ -5537,7 +5571,6 @@ GameObject:
   - component: {fileID: 2720583462277944142}
   - component: {fileID: 7039414827906473768}
   - component: {fileID: 1563305786620933399}
-  - component: {fileID: 812761521136959757}
   m_Layer: 0
   m_Name: Chara
   m_TagString: Untagged
@@ -5633,18 +5666,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &812761521136959757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6936804555629043086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d065b0f6df841154b85247db0fd95873, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7138944197578234577
 GameObject:
   m_ObjectHideFlags: 0
