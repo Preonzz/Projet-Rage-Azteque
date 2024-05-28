@@ -9,6 +9,7 @@ public class ControlMenuScript : MonoBehaviour
     {
         ControlMenuUI.SetActive(true);
         StartCoroutine(CloseControlMenu());
+        Time.timeScale = 0f;
     }
 
     public IEnumerator CloseControlMenu()
@@ -17,6 +18,7 @@ public class ControlMenuScript : MonoBehaviour
         yield return new WaitUntil(() => Input.GetButton("Jump"));
 
         ControlMenuUI.SetActive(false);
+        Time.timeScale= 1f;
 
         yield return null;
     }

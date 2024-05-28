@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2615857487985081902}
   - component: {fileID: 6289809877765878683}
   - component: {fileID: 1147877348577162143}
+  - component: {fileID: 494778575379433108}
   m_Layer: 7
   m_Name: Door
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2615857487985081902
 SpriteRenderer:
@@ -144,3 +145,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minKill: 3
+--- !u!114 &494778575379433108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567924674178843310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 211698598
+      Data2: 1246273282
+      Data3: 1123953578
+      Data4: -491520997
+    Path: event:/Door Breaks
+  Event: 
+  PlayEvent: 2
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

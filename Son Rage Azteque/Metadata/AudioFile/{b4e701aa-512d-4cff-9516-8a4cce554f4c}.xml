@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b4e701aa-512d-4cff-9516-8a4cce554f4c}">
+		<property name="assetPath">
+			<value>impact-stone-43864.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>3.024</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f2ff283a-9cf8-4220-91f8-5bed6091b13e}</destination>
+		</relationship>
+	</object>
+</objects>

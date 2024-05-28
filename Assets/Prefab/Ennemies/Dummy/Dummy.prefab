@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1632870068659720001}
   - component: {fileID: 8426570478593943630}
   - component: {fileID: 855395730663737153}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Chara
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 868762539282107410}
   - component: {fileID: 6458650623112745041}
   - component: {fileID: 6169364827193343819}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Dummy
   m_TagString: Ennemi
   m_Icon: {fileID: 0}
