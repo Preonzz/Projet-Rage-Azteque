@@ -379,14 +379,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5017639679720636333, guid: 8a5107a99109a3145b1691a3ea9c43e7, type: 3}
+      propertyPath: m_text
+      value: DEFAITE
+      objectReference: {fileID: 0}
+    - target: {fileID: 5017639679720636333, guid: 8a5107a99109a3145b1691a3ea9c43e7, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6829534834041913028, guid: 8a5107a99109a3145b1691a3ea9c43e7, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6829534834041913028, guid: 8a5107a99109a3145b1691a3ea9c43e7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -33
+      value: -46
       objectReference: {fileID: 0}
+    - target: {fileID: 7506944668541419156, guid: 8a5107a99109a3145b1691a3ea9c43e7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9125e87c7f920b640921d80d4c5488c5, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

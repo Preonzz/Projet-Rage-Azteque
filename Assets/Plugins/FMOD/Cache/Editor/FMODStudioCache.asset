@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Son Rage Azteque/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638525008792342020
+  lastModified: 638524982340000000
   FileSizes:
   - Name: Desktop
     Value: 756
@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: Son Rage Azteque/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638525008792331954
+  lastModified: 638524982340000000
   FileSizes:
   - Name: Desktop
     Value: 4242784
@@ -89,5 +89,5 @@ MonoBehaviour:
   - {fileID: -1468541313367850631}
   StringsBanks:
   - {fileID: -7227990843940038515}
-  cacheTime: 638525008792342020
+  cacheTime: 638524982340000000
   cacheVersion: 131617
