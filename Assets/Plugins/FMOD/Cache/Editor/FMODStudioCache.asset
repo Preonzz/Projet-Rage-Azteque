@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9038122527354043454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sun Beam
+  m_EditorClassIdentifier: 
+  Path: event:/Sun Beam
+  Guid:
+    Data1: 165742596
+    Data2: 1136768174
+    Data3: -1777298804
+    Data4: -617531534
+  Banks:
+  - {fileID: -1468541313367850631}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7227990843940038515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,11 +42,65 @@ MonoBehaviour:
   Path: Son Rage Azteque/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638524982340000000
+  lastModified: 638525322871351503
   FileSizes:
   - Name: Desktop
-    Value: 756
+    Value: 1068
   Exists: 1
+--- !u!114 &-4076741289647561081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player Damaged
+  m_EditorClassIdentifier: 
+  Path: event:/Player Damaged
+  Guid:
+    Data1: 1297958562
+    Data2: 1254087230
+    Data3: -1127303778
+    Data4: -1584511324
+  Banks:
+  - {fileID: -1468541313367850631}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3928349649269327024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Main Menu Musique
+  m_EditorClassIdentifier: 
+  Path: event:/Main Menu Musique
+  Guid:
+    Data1: 1843806714
+    Data2: 1312068695
+    Data3: 990644116
+    Data4: -1339425099
+  Banks:
+  - {fileID: -1468541313367850631}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 168000
 --- !u!114 &-3557284496306212392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40,13 +121,13 @@ MonoBehaviour:
     Data4: -275460491
   Banks:
   - {fileID: -1468541313367850631}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 168000
+  Length: 0
 --- !u!114 &-1468541313367850631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,10 +143,10 @@ MonoBehaviour:
   Path: Son Rage Azteque/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638524982340000000
+  lastModified: 638525322871341515
   FileSizes:
   - Name: Desktop
-    Value: 4242784
+    Value: 4335872
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -84,10 +165,125 @@ MonoBehaviour:
   - {fileID: -1468541313367850631}
   EditorEvents:
   - {fileID: -3557284496306212392}
+  - {fileID: -9038122527354043454}
+  - {fileID: 542271355396962876}
+  - {fileID: 4619951090685769822}
+  - {fileID: -4076741289647561081}
+  - {fileID: 6790694535681011064}
+  - {fileID: 6304016292476534866}
+  - {fileID: -3928349649269327024}
   EditorParameters: []
   MasterBanks:
   - {fileID: -1468541313367850631}
   StringsBanks:
   - {fileID: -7227990843940038515}
-  cacheTime: 638524982340000000
+  cacheTime: 638525322871351503
   cacheVersion: 131617
+--- !u!114 &542271355396962876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ennemy Damaged
+  m_EditorClassIdentifier: 
+  Path: event:/Ennemy Damaged
+  Guid:
+    Data1: -1694650031
+    Data2: 1155709268
+    Data3: 1491424150
+    Data4: 1437404081
+  Banks:
+  - {fileID: -1468541313367850631}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4619951090685769822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Rage
+  m_EditorClassIdentifier: 
+  Path: event:/Rage
+  Guid:
+    Data1: -347633773
+    Data2: 1194289243
+    Data3: -1297536612
+    Data4: 1290671130
+  Banks:
+  - {fileID: -1468541313367850631}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6304016292476534866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Heal
+  m_EditorClassIdentifier: 
+  Path: event:/Heal
+  Guid:
+    Data1: -771997004
+    Data2: 1177601817
+    Data3: -2044386929
+    Data4: 1946881891
+  Banks:
+  - {fileID: -1468541313367850631}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6790694535681011064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Door Breaks
+  m_EditorClassIdentifier: 
+  Path: event:/Door Breaks
+  Guid:
+    Data1: 211698598
+    Data2: 1246273282
+    Data3: 1123953578
+    Data4: -491520997
+  Banks:
+  - {fileID: -1468541313367850631}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1536
