@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{9ee22812-f498-4a50-a1e2-68e74d27e4c4}">
+		<property name="assetPath">
+			<value>Intro_azteque.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>33.985306122448982</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f2ff283a-9cf8-4220-91f8-5bed6091b13e}</destination>
+		</relationship>
+	</object>
+</objects>

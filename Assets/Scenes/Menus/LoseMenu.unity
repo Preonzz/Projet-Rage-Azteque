@@ -389,11 +389,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5017639679720636333, guid: 8a5107a99109a3145b1691a3ea9c43e7, type: 3}
       propertyPath: m_text
-      value: DEFAITE
+      value: "D\xC9FAITE"
       objectReference: {fileID: 0}
+    - target: {fileID: 5017639679720636333, guid: 8a5107a99109a3145b1691a3ea9c43e7, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 5805de8ea4ac7bb41ac8bbe8f4537941, type: 2}
+    - target: {fileID: 5017639679720636333, guid: 8a5107a99109a3145b1691a3ea9c43e7, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3433906437840839971, guid: 5805de8ea4ac7bb41ac8bbe8f4537941, type: 2}
     - target: {fileID: 5017639679720636333, guid: 8a5107a99109a3145b1691a3ea9c43e7, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5017639679720636333, guid: 8a5107a99109a3145b1691a3ea9c43e7, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6829534834041913028, guid: 8a5107a99109a3145b1691a3ea9c43e7, type: 3}
       propertyPath: m_AnchoredPosition.x

@@ -121,6 +121,8 @@ GameObject:
   - component: {fileID: 868762539282107410}
   - component: {fileID: 6458650623112745041}
   - component: {fileID: 6169364827193343819}
+  - component: {fileID: 8527334706421318785}
+  - component: {fileID: 8515595314660364691}
   m_Layer: 9
   m_Name: Dummy
   m_TagString: Ennemi
@@ -340,6 +342,68 @@ PolygonCollider2D:
       - {x: 0.49537387, y: 0.3817227}
       - {x: 0.48753822, y: 0.38176793}
   m_UseDelaunayMesh: 0
+--- !u!114 &8527334706421318785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4674563811553923402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Light Attack
+  EventReference:
+    Guid:
+      Data1: -1694650031
+      Data2: 1155709268
+      Data3: 1491424150
+      Data4: 1437404081
+    Path: event:/Ennemy Damaged
+  Event: 
+  PlayEvent: 5
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &8515595314660364691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4674563811553923402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Heavy Attack
+  EventReference:
+    Guid:
+      Data1: -1694650031
+      Data2: 1155709268
+      Data3: 1491424150
+      Data4: 1437404081
+    Path: event:/Ennemy Damaged
+  Event: 
+  PlayEvent: 5
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7712926414722933054
 GameObject:
   m_ObjectHideFlags: 0

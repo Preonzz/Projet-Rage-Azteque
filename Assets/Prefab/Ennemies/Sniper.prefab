@@ -4949,6 +4949,8 @@ GameObject:
   - component: {fileID: 1366486915524026330}
   - component: {fileID: 9059075118066050746}
   - component: {fileID: 206458354989013705}
+  - component: {fileID: 8793790917581843172}
+  - component: {fileID: 2612709223345851836}
   m_Layer: 8
   m_Name: Sniper
   m_TagString: Ennemi
@@ -5119,6 +5121,68 @@ MonoBehaviour:
   animEnemy: {fileID: 8880812159487558694}
   charaMelee: {fileID: 763915872380828225}
   blood: {fileID: 6891371265855717057}
+--- !u!114 &8793790917581843172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979900966129790906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Light Attack
+  EventReference:
+    Guid:
+      Data1: -1694650031
+      Data2: 1155709268
+      Data3: 1491424150
+      Data4: 1437404081
+    Path: event:/Ennemy Damaged
+  Event: 
+  PlayEvent: 5
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &2612709223345851836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979900966129790906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Heavy Attack
+  EventReference:
+    Guid:
+      Data1: -1694650031
+      Data2: 1155709268
+      Data3: 1491424150
+      Data4: 1437404081
+    Path: event:/Ennemy Damaged
+  Event: 
+  PlayEvent: 5
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &6096778706516364207
 GameObject:
   m_ObjectHideFlags: 0

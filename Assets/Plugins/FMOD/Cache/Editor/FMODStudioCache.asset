@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: Son Rage Azteque/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638525892580000000
+  lastModified: 638526022940000000
   FileSizes:
   - Name: Desktop
-    Value: 1162
+    Value: 1220
   Exists: 1
 --- !u!114 &-5960831589639326134
 MonoBehaviour:
@@ -46,7 +46,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 250
 --- !u!114 &-5663223465930980593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,6 +181,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 130032
+--- !u!114 &-3126240666320769763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Son Cin\xE9matique"
+  m_EditorClassIdentifier: 
+  Path: "event:/Son Cin\xE9matique"
+  Guid:
+    Data1: -1884450414
+    Data2: 1080412016
+    Data3: 1875199647
+    Data4: 587746194
+  Banks:
+  - {fileID: -1468541313367850631}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 33985
 --- !u!114 &-1468541313367850631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,10 +223,10 @@ MonoBehaviour:
   Path: Son Rage Azteque/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638525892580000000
+  lastModified: 638526022940000000
   FileSizes:
   - Name: Desktop
-    Value: 6150368
+    Value: 6579552
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -225,12 +252,13 @@ MonoBehaviour:
   - {fileID: 8566949924250874380}
   - {fileID: -4169270632924794754}
   - {fileID: -4127294312690585558}
+  - {fileID: -3126240666320769763}
   EditorParameters: []
   MasterBanks:
   - {fileID: -1468541313367850631}
   StringsBanks:
   - {fileID: -7227990843940038515}
-  cacheTime: 638525892580000000
+  cacheTime: 638526022940000000
   cacheVersion: 131617
 --- !u!114 &418725506210303539
 MonoBehaviour:
@@ -309,7 +337,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 1227
 --- !u!114 &8566949924250874380
 MonoBehaviour:
   m_ObjectHideFlags: 0
