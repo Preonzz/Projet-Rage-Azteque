@@ -18074,7 +18074,7 @@ GameObject:
   - component: {fileID: 2004272650}
   - component: {fileID: 2004272651}
   m_Layer: 0
-  m_Name: 3
+  m_Name: Montagne Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

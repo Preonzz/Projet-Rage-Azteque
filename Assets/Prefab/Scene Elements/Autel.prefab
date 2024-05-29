@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2026360520147627740}
   - component: {fileID: 447697387411894641}
   - component: {fileID: 4275183768894515652}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Divinity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4928,7 +4928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Active: 1
-  particule: {fileID: 0}
+  particule: {fileID: 447697387411894641}
 --- !u!61 &2876829093946560023
 BoxCollider2D:
   m_ObjectHideFlags: 0
