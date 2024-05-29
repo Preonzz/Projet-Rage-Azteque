@@ -710,6 +710,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screen: {fileID: 602664917}
+  etoile: {fileID: 159044836}
+  animator: {fileID: 159044835}
 --- !u!328 &1194505801
 VideoPlayer:
   m_ObjectHideFlags: 0
